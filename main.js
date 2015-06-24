@@ -2,20 +2,22 @@ function checkboxFilter() {
 	// $('.results > li').hide();
 
 	var filters = $('.filters').find('input');
-	var checkedFilters = $('.filters').find('input:checked');
-	// console.log(checkedFilters.length);
+	// console.log('filters length: ' + filters.length);
 	var items = $('.sites').find('input');
 
 	filters.on('change', function () {
-		console.log('clicked');
-		// items.attr( 'checked', false ).removeClass('selected');
+		// console.log('clicked');
+		var checkedFilters = $('.filters').find('input:checked');
+		// console.log('checkedFilters length: ' + checkedFilters.length);
 		checkedFilters.each(function () {
 			var $this = $(this);
 			var rel = $this.attr('rel');
-			console.log('rel: ' + rel);
-			// match = $('.sites input.' + rel);
+			// console.log('rel: ' + rel);
+			match = $('.sites input.' + rel);
+			items.attr( 'checked', false );
 			// console.log(match);
-			// $('.sites .' + rel).addClass('selected');
+			$('.sites .' + rel).addClass('selected');
+			$('.sites').find('.selected').attr( 'checked', true );
 		});
 	});
 }
