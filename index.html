@@ -3,107 +3,14 @@
 <head>
 	<meta charset="UTF-8">
 	<title>multiple file opener</title>
-
-	<style type="text/css">
-
-		html {
-			box-sizing: border-box;
-			font-size: 62.5%;
-		}
-		*, *:before, *:after {
-			box-sizing: inherit;
-		}
-
-		body {
-			background: #999;
-			font-family: sans-serif;
-			font-size: 1.6em;
-			margin: 0;
-		}
-
-		.wrap {
-			/*width: 80%;*/
-			margin: 0 auto;
-			padding: 2em;
-			background: #fff;
-			overflow: hidden;
-		}
-
-		h1 {
-			margin-top: 0;
-		}
-
-		.container {
-			overflow: hidden;
-		}
-		.input .container {
-			display: inline-block;
-			vertical-align: bottom;
-		}
-
-		.container--folder {
-			max-width: 60%;
-		}
-		.container--checks {
-			max-width: 30%;
-			margin-left: 2em;
-		}
-
-		.container label {
-			margin-right: 0.5em;
-		}
-
-		.checks {
-			/*display: inline-block;*/
-			float: left;
-			/*max-width: 45%;*/
-		}
-		.checks label {
-			display: block;
-		}
-		.checks input,
-		.checks span {
-			margin: 0.5em 0.25em;
-		}
-
-		.container .folder {
-			font-size: 1.8rem;
-			font-weight: 700;
-			margin-right: 1em;
-			min-width: 15em;
-			padding: 0.5em;
-		}
-
-		.container button {
-			background-color: blue;
-			border: 0;
-			background-color: #84329b;
-			background-image: url(http://www.crystalski.co.uk/static/images/crystalbrand/generalicons/arrow-sprite.png);
-			background-repeat: no-repeat;
-			background-position: 40px -329px;
-			color: #fff;
-			cursor: pointer;
-			font-size: 1.8rem;
-			padding: 0.5em 1.5em 0.5em 0.5em;
-			text-align: center;
-			text-decoration: none;
-		}
-
-		.container textarea {
-			font-family: monospace;
-			/*font-size: 1rem;*/
-			margin: 1em 0;
-			width: 100%;
-		}
-
-	</style>
-
+	<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 	<div class="wrap">
 
 		<div class="input">
+
 			<div class="container container--folder">
 				<h1>Multiple File Opener</h1>
 
@@ -117,21 +24,74 @@
 			</div>
 
 			<div class="container container--checks">
-				<div class="checks">
-					<label><input name="sites" type="checkbox" value="agent/52/"><span>52 (agent)</span></label>
-					<label><input name="sites" type="checkbox" value="agent/70/"><span>70 (agent)</span></label>
-					<label><input name="sites" type="checkbox" value="agent/71/"><span>71 (agent)</span></label>
-					<label><input name="sites" type="checkbox" value="agent/78/"><span>78 (agent)</span></label>
-					<label><input name="sites" type="checkbox" value="agent/81/"><span>81 (agent)</span></label>
+
+				<div class="checks filters">
+					<h3>Filters:</h3>
+					<label>
+						<input rel="crystal" name="brand" type="checkbox" value="crystal"><span>Crystal</span>
+					</label>
+					<label>
+						<input rel="thomson" name="brand" type="checkbox" value="thomson"><span>Thomson</span>
+					</label>
+					<hr>
+					<label>
+						<input rel="winter" name="season" type="checkbox" value="winter"><span>winter</span>
+					</label>
+					<label>
+						<input rel="summer" name="season" type="checkbox" value="summer"><span>summer</span>
+					</label>
+					<hr>
+					<label>
+						<input rel="direct" name="type" type="checkbox" value="direct"><span>direct</span>
+					</label>
+					<label>
+						<input rel="agent" name="type" type="checkbox" value="agent"><span>agent</span>
+					</label>
 				</div>
-				<div class="checks">
-					<label><input name="sites" type="checkbox" value="direct/52/"><span>52 (direct)</span></label>
-					<label><input name="sites" type="checkbox" value="direct/70/"><span>70 (direct)</span></label>
-					<label><input name="sites" type="checkbox" value="direct/71/"><span>71 (direct)</span></label>
-					<label><input name="sites" type="checkbox" value="direct/78/"><span>78 (direct)</span></label>
-					<label><input name="sites" type="checkbox" value="direct/81/"><span>81 (direct)</span></label>
+
+				<div class="checks sites">
+					<h3>Agent:</h3>
+					<label>
+						<input class="agent thomson summer" name="sites" type="checkbox" value="agent/52/"><span>52 (agent)</span>
+					</label>
+					<label>
+						<input class="agent crystal summer" name="sites" type="checkbox" value="agent/70/"><span>70 (agent)</span>
+					</label>
+					<label>
+						<input class="agent crystal summer" name="sites" type="checkbox" value="agent/71/"><span>71 (agent)</span>
+					</label>
+					<label>
+						<input class="agent crystal winter" name="sites" type="checkbox" value="agent/78/"><span>78 (agent)</span>
+					</label>
+					<label>
+						<input class="agent crystal winter" name="sites" type="checkbox" value="agent/81/"><span>81 (agent)</span>
+					</label>
 				</div>
+
+				<div class="checks sites">
+					<h3>Direct:</h3>
+					<label>
+						<input class="direct thomson summer" name="sites" type="checkbox" value="direct/52/"><span>52 (direct)</span>
+					</label>
+					<label>
+						<input class="direct crystal summer" name="sites" type="checkbox" value="direct/70/"><span>70 (direct)</span>
+					</label>
+					<label>
+						<input class="direct crystal summer" name="sites" type="checkbox" value="direct/71/"><span>71 (direct)</span>
+					</label>
+					<label>
+						<input class="direct crystal winter" name="sites" type="checkbox" value="direct/78/"><span>78 (direct)</span>
+					</label>
+					<label>
+						<input class="direct thomson winter" name="sites" type="checkbox" value="direct/79/"><span>79 (direct)</span>
+					</label>
+					<label>
+						<input class="direct crystal winter" name="sites" type="checkbox" value="direct/81/"><span>81 (direct)</span>
+					</label>
+				</div>
+
 			</div>
+
 		</div>
 
 		<div class="output">
@@ -144,45 +104,7 @@
 	</div>
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	<script>
-
-		function createCommand(path) {
-			'use strict';
-
-			var gitfolder = 'alpine-git';
-			var cd = 'cd /usr/local/alpine/' + gitfolder + '/alpine-static/content/';
-			var open = ' && subl index.html && ';
-
-			// This is an alias which goes to my main code directory
-			var end = 'alpine-git';
-
-			// checkbox functionality
-			var checks = $( '.container--checks' ).find( 'input:checked' );
-			var sitearr = [];
-
-			for (var i = 0; i < checks.length; i ++) {
-				sitearr.push(checks[i].value.toString());
-			}
-
-			// var sites = ['agent/52/', 'agent/70/', 'agent/71/', 'agent/78/', 'agent/81/', 'direct/52/', 'direct/70/', 'direct/71/', 'direct/78/', 'direct/79/', 'direct/81/'];
-
-			var command = '';
-			for (var x = 0; x <= sitearr.length - 1; x++) {
-				command += cd + sitearr[x] + path + open;
-			}
-			command += end;
-
-			$('#code').val(command);
-		}
-
-		$( '#button' ).on('click', function(){
-			'use strict';
-
-			var folder = $( '#folder' ).val();
-			createCommand(folder);
-		});
-
-	</script>
+	<script src="main.js"></script>
 
 </body>
 </html>
