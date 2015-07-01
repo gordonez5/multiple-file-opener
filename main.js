@@ -59,6 +59,14 @@ $(document).ready(function () {
 
 	checkboxFilter();
 
+	$('.checkall input').toggle(function(){
+		$('input:checkbox').attr('checked','checked');
+		$(this).val('uncheck all');
+	},function(){
+		$('input:checkbox').removeAttr('checked').removeClass('selected');
+		$(this).val('check all');
+	});
+
 	$( '#button' ).on('click', function(){
 		var gitpath = $( '#gitpath' ).val();
 		var folder = $( '#folder' ).val();

@@ -14,7 +14,9 @@
 			<h1>Multiple File Opener</h1>
 
 			<ol>
-				<li>Enter the root path to the relevant files.</li>
+				<li>Enter the name of your Alpine git folder (if different).</li>
+				<li>Enter the root path to the relevant folders.</li>
+				<li>Select which sites you want to edit.</li>
 				<li>Copy the generated code to the terminal.</li>
 			</ol>
 
@@ -27,7 +29,9 @@
 					<label for="folder">Folder:</label>
 					<input class="folder" id="folder" name="folder" type="text">
 				</div>
-				<button class="button" id="button">Go</button>
+				<div class="run">
+					<input type="button" class="btn btn-primary" id="button" value="Go">
+				</div>
 			</div>
 
 			<div class="container container--checks">
@@ -95,6 +99,10 @@
 					<label>
 						<input class="direct crystal winter" name="sites" type="checkbox" value="direct/81/"><span>81 (direct)</span>
 					</label>
+				</div>
+
+				<div class="checkall">
+					<input type="button" class="btn btn-secondary" value="check all" />
 				</div>
 
 			</div>
