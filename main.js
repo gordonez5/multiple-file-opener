@@ -1,4 +1,6 @@
 function checkboxFilter() {
+	'use strict';
+
 	// $('.results > li').hide();
 
 	var filters = $('.filters').find('input');
@@ -13,7 +15,7 @@ function checkboxFilter() {
 			var $this = $(this);
 			var rel = $this.attr('rel');
 			// console.log('rel: ' + rel);
-			match = $('.sites input.' + rel);
+			var match = $('.sites input.' + rel);
 			items.attr( 'checked', false );
 			// console.log(match);
 			$('.sites .' + rel).addClass('selected');
@@ -22,11 +24,11 @@ function checkboxFilter() {
 	});
 }
 
-function createCommand(path) {
+function createCommand(gitpath,folder) {
 	'use strict';
 
-	var gitfolder = 'alpine-git';
-	var cd = 'cd /usr/local/alpine/' + gitfolder + '/alpine-static/content/';
+	// var gitfolder = 'alpine-git';
+	var cd = 'cd /usr/local/alpine/' + gitpath + '/alpine-static/content/';
 	var open = ' && subl index.html && ';
 
 	// This is an alias which goes to my main code directory
@@ -44,23 +46,23 @@ function createCommand(path) {
 
 	var command = '';
 	for (var x = 0; x <= sitearr.length - 1; x++) {
-		command += cd + sitearr[x] + path + open;
+		command += cd + sitearr[x] + folder + open;
 	}
 	command += end;
 
-	$('#code').val(command);
+	$('#code').val(command).select();
 }
 
 
 $(document).ready(function () {
+	'use strict';
 
 	checkboxFilter();
 
 	$( '#button' ).on('click', function(){
-		'use strict';
-
+		var gitpath = $( '#gitpath' ).val();
 		var folder = $( '#folder' ).val();
-		createCommand(folder);
+		createCommand( gitpath, folder );
 	});
 
 });

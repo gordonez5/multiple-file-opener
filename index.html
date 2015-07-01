@@ -11,15 +11,22 @@
 
 		<div class="input">
 
-			<div class="container container--folder">
-				<h1>Multiple File Opener</h1>
+			<h1>Multiple File Opener</h1>
 
-				<ol>
-					<li>Enter the root path to the relevant files.</li>
-					<li>Copy the generated code to the terminal.</li>
-				</ol>
-				<label for="folder">Folder:</label>
-				<input class="folder" id="folder" name="folder" type="text">
+			<ol>
+				<li>Enter the root path to the relevant files.</li>
+				<li>Copy the generated code to the terminal.</li>
+			</ol>
+
+			<div class="container container--folder">
+				<div class="field toggle">
+					<label for="gitpath">Git Root:</label>
+					<input class="gitpath" id="gitpath" name="gitpath" type="text" value="alpine-git">
+				</div>
+				<div class="field">
+					<label for="folder">Folder:</label>
+					<input class="folder" id="folder" name="folder" type="text">
+				</div>
 				<button class="button" id="button">Go</button>
 			</div>
 
