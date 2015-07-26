@@ -2,8 +2,11 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>multiple file opener</title>
-	<link rel="stylesheet" href="styles.css">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Multiple File Opener</title>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/gridism.css">
+	<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
@@ -13,12 +16,33 @@
 
 			<h1>Multiple File Opener</h1>
 
-			<ol>
-				<li>Enter the name of your Alpine git folder (if different).</li>
-				<li>Enter the root path to the relevant folders.</li>
-				<li>Select which sites you want to edit.</li>
-				<li>Copy the generated code to the terminal.</li>
-			</ol>
+			<section class="section__input wider">
+
+				<div class="grid">
+
+					<div class="unit half">
+
+						<div class="info-box expandable">
+							<div class="header">
+								<h3>Instructions</h3>
+							</div>
+							<div class="content">
+								<ol>
+									<li>Enter the name of your Alpine git folder (if different).</li>
+									<li>Enter the root path to the relevant folders.</li>
+									<li>Select which sites you want to edit.</li>
+									<li>Copy the generated code to the terminal.</li>
+								</ol>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="unit half"></div>
+
+				</div>
+
+			</section>
 
 			<div class="container container--folder">
 				<div class="field toggle">
@@ -119,7 +143,7 @@
 	</div>
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	<script src="main.js"></script>
+	<script src="js/main.js"></script>
 
 </body>
 </html>
