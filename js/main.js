@@ -4,6 +4,7 @@ Gdz.Global = {
 
 	// Slideable content function.
 	slideToggle: function() {
+		'use strict';
 
 		// Unbind the slide toggle click
 		$( '.header' ).unbind('click');
@@ -17,7 +18,7 @@ Gdz.Global = {
 			// When the header is clicked toggle the content and change the active class
 			$header.on('click', function ( e ) {
 				e.preventDefault();
-				$content.slideToggle( 'slow' );
+				$content.slideToggle( 400 );
 				$this.toggleClass( 'active' );
 			});
 		});

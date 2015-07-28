@@ -6,49 +6,177 @@
 	<title>Multiple File Opener</title>
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/gridism.css">
+	<link rel="stylesheet" href="css/toggle-switch.css">
 	<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
 	<div class="wrap">
 
-		<div class="input">
+		<section class="section__input wider grid">
 
-			<h1>Multiple File Opener</h1>
+			<div class="unit whole">
+				<h1>Multiple File Opener</h1>
+			</div>
 
-			<section class="section__input wider">
+			<div class="unit half">
 
-				<div class="grid">
+				<div class="info-box expandable">
+					<div class="header">
+						<h3>Instructions</h3>
+					</div>
+					<div class="content">
 
-					<div class="unit half">
+						<div class="container container--instructions">
 
-						<div class="info-box expandable">
-							<div class="header">
-								<h3>Instructions</h3>
-							</div>
-							<div class="content">
-								<ol>
-									<li>Enter the name of your Alpine git folder (if different).</li>
-									<li>Enter the root path to the relevant folders.</li>
-									<li>Select which sites you want to edit.</li>
-									<li>Copy the generated code to the terminal.</li>
-								</ol>
-							</div>
+							<ol>
+								<li>Enter the name of your Alpine git folder (if different).</li>
+								<li>Enter the root path to the relevant folders.</li>
+								<li>Select which sites you want to edit.</li>
+								<li>Copy the generated code to the terminal.</li>
+							</ol>
+
 						</div>
 
 					</div>
-
-					<div class="unit half"></div>
-
 				</div>
 
-			</section>
+			</div>
 
-			<div class="container container--folder">
-				<div class="field toggle">
-					<label for="gitpath">Git Root:</label>
-					<input class="gitpath" id="gitpath" name="gitpath" type="text" value="alpine-git">
+			<div class="unit half">
+
+				<div class="info-box expandable">
+					<div class="header">
+						<h3>Config</h3>
+					</div>
+					<div class="content">
+
+						<div class="container container--configs">
+
+							<div class="field">
+								<label for="gitpath">Git Root:</label>
+								<input class="gitpath" id="gitpath" name="gitpath" type="text" value="alpine-git">
+							</div>
+
+							<!--div class="field switch-toggle switch-android large-5">
+								<label for="sublime">Subl:</label>
+								<input id="week" name="view" type="radio" checked>
+								<label for="week" onclick="">Week</label>
+
+								<input id="month" name="view" type="radio">
+								<label for="month" onclick="">Month</label>
+							</div-->
+
+							<div class="field">
+								<label class="switch-light switch-android" onclick="">
+									<input type="checkbox" checked="checked" />
+									<span>
+										Subl:
+										<span>Off</span>
+										<span>On</span>
+									</span>
+									<a></a>
+								</label>
+							</div>
+
+						</div>
+
+					</div>
 				</div>
+
+			</div>
+
+			<div class="unit whole">
+
+				<div class="info-box expandable">
+					<div class="header">
+						<h3>Filters</h3>
+					</div>
+					<div class="content">
+
+						<div class="grid container container--checks">
+
+							<div class="unit one-third checks filters">
+								<h3>Filters:</h3>
+								<label>
+									<input rel="crystal" name="brand" type="checkbox" value="crystal"><span>Crystal</span>
+								</label>
+								<label>
+									<input rel="thomson" name="brand" type="checkbox" value="thomson"><span>Thomson</span>
+								</label>
+								<hr>
+								<label>
+									<input rel="winter" name="season" type="checkbox" value="winter"><span>winter</span>
+								</label>
+								<label>
+									<input rel="summer" name="season" type="checkbox" value="summer"><span>summer</span>
+								</label>
+								<hr>
+								<label>
+									<input rel="direct" name="type" type="checkbox" value="direct"><span>direct</span>
+								</label>
+								<label>
+									<input rel="agent" name="type" type="checkbox" value="agent"><span>agent</span>
+								</label>
+							</div>
+
+							<div class="unit one-third checks sites">
+								<h3>Agent:</h3>
+								<label>
+									<input class="agent thomson summer" name="sites" type="checkbox" value="agent/52/"><span>Thomson Lakes (agent)</span>
+								</label>
+								<label>
+									<input class="agent crystal summer" name="sites" type="checkbox" value="agent/70/"><span>Crystal Summer (agent)</span>
+								</label>
+								<label>
+									<input class="agent crystal summer" name="sites" type="checkbox" value="agent/71/"><span>Crystal Summer IE (agent)</span>
+								</label>
+								<label>
+									<input class="agent crystal winter" name="sites" type="checkbox" value="agent/78/"><span>Crystal Ski (agent)</span>
+								</label>
+								<label>
+									<input class="agent crystal winter" name="sites" type="checkbox" value="agent/81/"><span>Crystal Ski IE (agent)</span>
+								</label>
+							</div>
+
+							<div class="unit one-third checks sites">
+								<h3>Direct:</h3>
+								<label>
+									<input class="direct thomson summer" name="sites" type="checkbox" value="direct/52/"><span>Thomson Lakes (direct)</span>
+								</label>
+								<label>
+									<input class="direct crystal summer" name="sites" type="checkbox" value="direct/70/"><span>Crystal Summer (direct)</span>
+								</label>
+								<label>
+									<input class="direct crystal summer" name="sites" type="checkbox" value="direct/71/"><span>Crystal Summer IE (direct)</span>
+								</label>
+								<label>
+									<input class="direct crystal winter" name="sites" type="checkbox" value="direct/78/"><span>Crystal Ski (direct)</span>
+								</label>
+								<label>
+									<input class="direct thomson winter" name="sites" type="checkbox" value="direct/79/"><span>Thomson Ski (direct)</span>
+								</label>
+								<label>
+									<input class="direct crystal winter" name="sites" type="checkbox" value="direct/81/"><span>Crystal Ski IE (direct)</span>
+								</label>
+							</div>
+
+							<div class="unit whole checkall">
+								<input type="button" class="btn btn-secondary" value="check all" />
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+
+		</section>
+
+		<section class="section__input wider grid">
+
+			<div class="unit half container container--folder">
 				<div class="field">
 					<label for="folder">Folder:</label>
 					<input class="folder" id="folder" name="folder" type="text">
@@ -58,86 +186,11 @@
 				</div>
 			</div>
 
-			<div class="container container--checks">
-
-				<div class="checks filters">
-					<h3>Filters:</h3>
-					<label>
-						<input rel="crystal" name="brand" type="checkbox" value="crystal"><span>Crystal</span>
-					</label>
-					<label>
-						<input rel="thomson" name="brand" type="checkbox" value="thomson"><span>Thomson</span>
-					</label>
-					<hr>
-					<label>
-						<input rel="winter" name="season" type="checkbox" value="winter"><span>winter</span>
-					</label>
-					<label>
-						<input rel="summer" name="season" type="checkbox" value="summer"><span>summer</span>
-					</label>
-					<hr>
-					<label>
-						<input rel="direct" name="type" type="checkbox" value="direct"><span>direct</span>
-					</label>
-					<label>
-						<input rel="agent" name="type" type="checkbox" value="agent"><span>agent</span>
-					</label>
-				</div>
-
-				<div class="checks sites">
-					<h3>Agent:</h3>
-					<label>
-						<input class="agent thomson summer" name="sites" type="checkbox" value="agent/52/"><span>52 (agent)</span>
-					</label>
-					<label>
-						<input class="agent crystal summer" name="sites" type="checkbox" value="agent/70/"><span>70 (agent)</span>
-					</label>
-					<label>
-						<input class="agent crystal summer" name="sites" type="checkbox" value="agent/71/"><span>71 (agent)</span>
-					</label>
-					<label>
-						<input class="agent crystal winter" name="sites" type="checkbox" value="agent/78/"><span>78 (agent)</span>
-					</label>
-					<label>
-						<input class="agent crystal winter" name="sites" type="checkbox" value="agent/81/"><span>81 (agent)</span>
-					</label>
-				</div>
-
-				<div class="checks sites">
-					<h3>Direct:</h3>
-					<label>
-						<input class="direct thomson summer" name="sites" type="checkbox" value="direct/52/"><span>52 (direct)</span>
-					</label>
-					<label>
-						<input class="direct crystal summer" name="sites" type="checkbox" value="direct/70/"><span>70 (direct)</span>
-					</label>
-					<label>
-						<input class="direct crystal summer" name="sites" type="checkbox" value="direct/71/"><span>71 (direct)</span>
-					</label>
-					<label>
-						<input class="direct crystal winter" name="sites" type="checkbox" value="direct/78/"><span>78 (direct)</span>
-					</label>
-					<label>
-						<input class="direct thomson winter" name="sites" type="checkbox" value="direct/79/"><span>79 (direct)</span>
-					</label>
-					<label>
-						<input class="direct crystal winter" name="sites" type="checkbox" value="direct/81/"><span>81 (direct)</span>
-					</label>
-				</div>
-
-				<div class="checkall">
-					<input type="button" class="btn btn-secondary" value="check all" />
-				</div>
-
+			<div class="unit half container">
+				<textarea name="code" id="code" cols="15" rows="15"></textarea>
 			</div>
 
-		</div>
-
-		<div class="output">
-			<div class="container">
-				<textarea name="code" id="code" cols="30" rows="25"></textarea>
-			</div>
-		</div>
+		</section>
 
 
 	</div>

@@ -15,16 +15,23 @@ body {
 	background: #999;
 	color: #252a32;
 	font-family: sans-serif;
-	font-size: 1.6rem;
+	font-size: 1.4rem;
 	margin: 0;
 }
 
 .wrap {
-	/*width: 80%;*/
 	margin: 0 auto;
-	padding: 2rem;
 	background: #fff;
 	overflow: hidden;
+}
+
+.grid .unit.whole {
+	padding-right: 10px;
+}
+@media screen and (max-width: 568px) {
+	.grid .unit.whole {
+		padding-right: 20px;
+	}
 }
 
 h1, h3 {
@@ -35,16 +42,16 @@ h1, h3 {
 	border-color: #cee1e1;
 	border-style: solid;
 	border-width: 1px;
-	margin-bottom: 1em;
-	/*max-width: 40%;*/
+	/*margin-bottom: 1em;*/
 }
+
 .info-box .header {
 	background-color: #F5FDFB;
-	padding: 1em;
 	display: block;
 	overflow: hidden;
 	position: relative;
 }
+
 .info-box.expandable > .header:after {
 	background-image: url(http://www.crystalski.co.uk/static/img/crystal/arrow-sprite.png);
 	background-repeat: no-repeat;
@@ -57,24 +64,31 @@ h1, h3 {
 	height: 1em;
 	margin-top: -11px;
 }
+
 .info-box.expandable.active > .header:after {
 	background-position: 2px -400px;
 }
 
 .info-box .header h3 {
 	color: #005959;
-	font-size: 2rem;
+	font-size: 1em;
 	margin: 0;
+	padding: 0.75em;
 	text-transform: uppercase;
 }
+
 .info-box.expandable > .header h3 {
 	cursor: pointer;
 	padding-right: 1em;
 }
+
 .info-box .content {
+	display: none;
 	padding: 1em;
 	position: relative;
+	overflow: hidden;
 }
+
 .info-box.expandable.active .content {
 	display: block;
 }
@@ -82,14 +96,15 @@ h1, h3 {
 .container {
 	overflow: hidden;
 }
+
 .input .container {
 	display: inline-block;
 	vertical-align: top;
 }
 
 .container--folder {
-	max-width: 60%;
 }
+
 .container--checks {
 	/*max-width: 30%;*/
 	margin-left: 2rem;
@@ -106,6 +121,10 @@ h1, h3 {
 .field label {
 	min-width: 8rem;
 }
+.container--folder label {
+	display: block;
+	margin-bottom: 0.5em;
+}
 
 .checks {
 	/*display: inline-block;*/
@@ -113,10 +132,12 @@ h1, h3 {
 	/*max-width: 45%;*/
 	padding: 0 1rem 1rem;
 }
+
 .checks label {
 	display: block;
 	margin: 0.5rem 0;
 }
+
 .checks input,
 .checks span {
 	margin: 0.5rem 0.25rem;
@@ -130,6 +151,9 @@ h1, h3 {
 	min-width: 15rem;
 	padding: 0.5rem;
 }
+.container--folder input[type="text"] {
+	width: 100%;
+}
 
 .btn {
 	border-style: solid;
@@ -142,14 +166,17 @@ h1, h3 {
 	min-width: 15rem;
 	position: relative;
 }
+
 .btn-primary {
 	background-color: #c0023e;
 	border-color: #a70236;
 	color: #fff;
 }
+
 .btn-primary:hover {
 	background-color: #a70236;
 }
+
 .btn-primary:after {
 	background-image: url(http://www.crystalski.co.uk/static/images/crystalbrand/generalicons/arrow-sprite.png);
 	background-repeat: no-repeat;
@@ -167,6 +194,7 @@ h1, h3 {
 	border-color: #ccc;
 	color: #252a32;
 }
+
 .btn-secondary:hover {
 	background-color: #d8d8d8;
 }
@@ -181,6 +209,7 @@ h1, h3 {
 .container textarea {
 	font-family: monospace;
 	/*font-size: 1rem;*/
-	margin: 1rem 0;
 	width: 100%;
 }
+
+
