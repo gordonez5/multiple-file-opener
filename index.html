@@ -13,10 +13,11 @@
 
 	<div class="wrap">
 
-		<section class="section__input wider grid">
+		<section class="section__options wider grid">
 
 			<div class="unit whole">
-				<h1>Multiple File Opener</h1>
+				<h1 class="heading--h1">mf openr</h1>
+				<h2 class="heading--h2">A tool for opening multiple Alpine static content files in Sublime Text</h2>
 			</div>
 
 			<div class="unit half">
@@ -58,25 +59,30 @@
 								<input class="gitpath" id="gitpath" name="gitpath" type="text" value="alpine-git">
 							</div>
 
-							<!--div class="field switch-toggle switch-android large-5">
-								<label for="sublime">Subl:</label>
-								<input id="week" name="view" type="radio" checked>
-								<label for="week" onclick="">Week</label>
-
-								<input id="month" name="view" type="radio">
-								<label for="month" onclick="">Month</label>
-							</div-->
+							<div class="field">
+								<div class="container container--radios">
+									<label>Filetype:</label>
+									<div class="switch-toggle switch-candy">
+										<input id="html" name="filetype" type="radio" value="html" checked>
+										<label for="html" onclick="">html</label>
+										<input id="css" name="filetype" type="radio" value="css">
+										<label for="css" onclick="">css</label>
+										<a></a>
+									</div>
+								</div>
+							</div>
 
 							<div class="field">
-								<label class="switch-light switch-android" onclick="">
-									<input type="checkbox" checked="checked" />
-									<span>
-										Subl:
-										<span>Off</span>
-										<span>On</span>
-									</span>
-									<a></a>
-								</label>
+								<div class="container container--radios">
+									<label>Subl:</label>
+									<div class="switch-toggle switch-candy">
+										<input id="subl-yes" name="editor" type="radio" checked>
+										<label for="subl-yes" onclick="">yes</label>
+										<input id="subl-no" name="editor" type="radio">
+										<label for="subl-no" onclick="">no</label>
+										<a></a>
+									</div>
+								</div>
 							</div>
 
 						</div>
@@ -104,14 +110,14 @@
 								<label>
 									<input rel="thomson" name="brand" type="checkbox" value="thomson"><span>Thomson</span>
 								</label>
-								<hr>
+								<span class="hr"></span>
 								<label>
 									<input rel="winter" name="season" type="checkbox" value="winter"><span>winter</span>
 								</label>
 								<label>
 									<input rel="summer" name="season" type="checkbox" value="summer"><span>summer</span>
 								</label>
-								<hr>
+								<span class="hr"></span>
 								<label>
 									<input rel="direct" name="type" type="checkbox" value="direct"><span>direct</span>
 								</label>
@@ -174,23 +180,38 @@
 
 		</section>
 
-		<section class="section__input wider grid">
+		<section class="section__tool wider grid">
 
 			<div class="unit half container container--folder">
 				<div class="field">
 					<label for="folder">Folder:</label>
-					<input class="folder" id="folder" name="folder" type="text">
+					<input class="folder" id="folder" name="folder" type="text" placeholder="eg. ski-resorts/france-ski-holidays">
 				</div>
 				<div class="run">
 					<input type="button" class="btn btn-primary" id="button" value="Go">
 				</div>
 			</div>
 
-			<div class="unit half container">
-				<textarea name="code" id="code" cols="15" rows="15"></textarea>
+			<div class="unit half container container--code">
+				<div class="field">
+					<label for="code">Code:</label>
+					<div class="textarea-wrap">
+						<textarea name="code" id="code" cols="15" rows="15"></textarea>
+					</div>
+				</div>
 			</div>
 
 		</section>
+
+		<footer class="footer__main">
+
+			<section class="section__footer grid">
+				<div class="unit whole">
+					<p class="copyright">&copy; 2015 Simon Gordon</p>
+				</div>
+			</section>
+
+		</footer>
 
 
 	</div>
