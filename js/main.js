@@ -51,15 +51,29 @@ Gdz.Global = {
 		});
 	},
 
-	createCommand: function(gitpath,folder) {
+	createCommand: function(gitpath,folder,type,subl) {
 		'use strict';
 
 		// var gitfolder = 'alpine-git';
 		var cd = 'cd /usr/local/alpine/' + gitpath + '/alpine-static/content/';
-		var open = ' && subl index.html && ';
+		var open = '';
+
+		if (subl === true) {
+			open += ' && subl ';
+		} else {
+			open += ' && open -a "Sublime Text" ';
+		}
+
+		if (type == 'css') {
+			open += 'cms.css && ';
+		} else	{
+			open += 'index.html && ';
+		}
+
 
 		// This is an alias which goes to my main code directory
 		var end = 'alpine-git';
+		var command = '';
 
 		// checkbox functionality
 		var checks = $( '.container--checks' ).find('.sites').find( 'input:checked' );
@@ -71,16 +85,60 @@ Gdz.Global = {
 
 		// var sites = ['agent/52/', 'agent/70/', 'agent/71/', 'agent/78/', 'agent/81/', 'direct/52/', 'direct/70/', 'direct/71/', 'direct/78/', 'direct/79/', 'direct/81/'];
 
-		var command = '';
 		for (var x = 0; x <= sitearr.length - 1; x++) {
 			command += cd + sitearr[x] + folder + open;
 		}
 		command += end;
 
-		$('#code').val(command).select();
+		$( '#code' ).val(command).select();
+	},
+
+	isHtml: function(){
+		'use strict';
+
+		var fileType = $( '.container--radios' ).find( 'input[name=filetype]:checked' ).val();
+		console.log('filetype: ' + fileType);
+		if (fileType !== 'html') {
+			return false;
+		};
+		return true;
+	},
+
+	hasSubl: function(){
+		'use strict';
+
+		var editor = $( '.container--radios' ).find( 'input[name=editor]:checked' ).val();
+		console.log('editor: ' + editor);
+		if (editor !== 'yes') {
+			return false;
+		};
+		return true;
+	},
+
+	getOptions: function(){
+		'use strict';
+
+		var gitpath = $( '#gitpath' ).val();
+		var folder = $( '#folder' ).val();
+		var type = '';
+		var subl = true;
+
+		if(Gdz.Global.hasSubl()) {
+			subl = true;
+		} else {
+			subl = false;
+		}
+
+		if (Gdz.Global.isHtml()) {
+			type = 'html';
+		} else {
+			type = 'css';
+		};
+
+		Gdz.Global.createCommand( gitpath, folder, type, subl );
 	}
 
-}
+};
 
 
 $(document).ready(function () {
@@ -89,18 +147,16 @@ $(document).ready(function () {
 	Gdz.Global.slideToggle();
 	Gdz.Global.checkboxFilter();
 
-	$('.checkall input').toggle(function(){
-		$('input:checkbox').attr('checked','checked');
-		$(this).val('uncheck all');
+	$( '.checkall' ).find( 'input' ).toggle(function(){
+		$( 'input:checkbox' ).attr( 'checked', 'checked' );
+		$(this).val( 'uncheck all' );
 	},function(){
-		$('input:checkbox').removeAttr('checked').removeClass('selected');
-		$(this).val('check all');
+		$( 'input:checkbox' ).removeAttr( 'checked' ).removeClass( 'selected' );
+		$(this).val( 'check all' );
 	});
 
 	$( '#button' ).on('click', function(){
-		var gitpath = $( '#gitpath' ).val();
-		var folder = $( '#folder' ).val();
-		Gdz.Global.createCommand( gitpath, folder );
+		Gdz.Global.getOptions();
 	});
 
 });

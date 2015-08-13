@@ -1,5 +1,4 @@
 .*
 !.gitignore
 css-toggle-switch/
-css/toggle-switch.css
 css/toggle-switch-rem.css
