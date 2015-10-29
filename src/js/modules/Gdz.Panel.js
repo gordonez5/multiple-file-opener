@@ -1,35 +1,40 @@
 Gdz.Panel = {
 
 	init: function() {
+
 		'use strict';
 
 		var $document = $(document),
-			$subNav = $('.sub-nav'),
-			isSubNavActive = false;
+			$panel = $('.off-canvas'),
+			isPanelActive = false;
 
-		// Add / remove 'sub-nav-active' class to trigger slide-in navigation
-		$document.on('click', '#js-sub-nav-trigger, #js-close-nav', function(e) {
+			console.log($panel);
+
+		// Add / remove 'off-canvas-active' class to trigger slide-in navigation
+		$document.on('click', '#js-info, #js-close-nav', function(e) {
 
 			e.preventDefault();
 
-			if (isSubNavActive === false) {
-				$subNav.addClass('sub-nav-active');
-				isSubNavActive = true;
+			if (isPanelActive === false) {
+				$panel.addClass('off-canvas-active');
+				isPanelActive = true;
+				// console.log(isPanelActive);
 			} else{
-				$subNav.removeClass('sub-nav-active');
-				isSubNavActive = false;
+				$panel.removeClass('off-canvas-active');
+				isPanelActive = false;
+				// console.log(isPanelActive);
 			}
 
 		});
 
-		// Trigger nav close on click of element outside of nav
-		$document.on('click', function(event) {
-			if (!$(event.target).closest('#js-sub-nav-trigger, .sub-nav').length) {
-				if (isSubNavActive === true) {
-					$subNav.removeClass('sub-nav-active');
-				}
-			}
-		});
+		// Trigger panel close on click of element outside of nav
+		// $document.on('click', function(event) {
+		// 	if (!$(event.target).closest('#js-off-canvas-trigger, .off-canvas').length) {
+		// 		if (isPanelActive === true) {
+		// 			$panel.removeClass('off-canvas-active');
+		// 		}
+		// 	}
+		// });
 
 	}
 

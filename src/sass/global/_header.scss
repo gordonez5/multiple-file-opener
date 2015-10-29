@@ -1,45 +1,23 @@
-/* ------------------------------------------
-	FIXED HEADER
---------------------------------------------- */
+.triggers {
+	position: relative;
+}
 
-.main-header {
-	background-color: $colorSix;
-	position: fixed;
-	z-index: 3;
-	width: 100%;
-	left: 0;
+.trigger {
+	color: $colorOne;
+	cursor: pointer;
+	font-size: 2rem;
+	margin: 1rem;
+	position: absolute;
 	top: 0;
-}
-
-.logo-holder {
-	display: inline-block;
-	max-width: 40%;
-	min-width: 120px;
-	@media screen and (min-width: 451px) {
-		width: 170px;
+	&:hover {
+		color: $colorThree;
 	}
 }
 
-.logo {
-	-webkit-tap-highlight-color: rgba(0,0,0,0);
-	text-decoration: none;
-	/*line-height: 1;*/
-	/*padding: 1rem 1rem 0 0;*/
-	color: #fff;
-	float: left;
-	text-transform: uppercase;
+.trigger--info {
+	left: 0;
 }
 
-.logo img {
-	width: 100%;
-	height: auto;
-	@media #{$tabletLandscape} {
-		opacity: 0;
-		@include transitionProperty((opacity));
-		@include transitionDuration(0.5s);
-		@include transitionTimingFunction(ease-out);
-		.show & {
-			opacity: 1;
-		}
-	}
+.trigger--config {
+	right: 0;
 }

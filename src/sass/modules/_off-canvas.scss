@@ -1,0 +1,78 @@
+.off-canvas {
+	background-color: $ltgrey;
+	// font-family: $brandFontHeading;
+	padding: 0 0 ( $unit-default * 2 );
+	overflow-x: hidden;
+	overflow-y: auto;
+	transition: left 0.3s;
+	width: 100%;
+	z-index: 15;
+
+	.no-js & {
+		padding: 0;
+		margin: ( $unit-default * 2 ) 0;
+	}
+
+	// Off-canvas styles
+	.js & {
+		height: 100%;
+		left: 100%;
+		position: fixed;
+		top: 0;
+	}
+
+	// header for off-canvas panel
+	.close-panel {
+		background-color: $colorOne;
+		position: relative;
+		@media screen and (min-width: 569px) {
+			// display: none;
+		}
+		color: $white;
+		display: block;
+		// font-family: $brandFontHeading;
+		font-size: 18px;
+		line-height: 1;
+		min-height: 4rem;
+		padding: $unit-default ( $unit-default * 2 ) 0.7em $unit-default;;
+		position: relative;
+		text-transform: uppercase;
+		vertical-align: middle;
+		.no-js & {
+			display: none;
+		}
+		&:hover,
+		&:active,
+		&:focus {
+			color: $white;
+		}
+	}
+
+	.trigger--close {
+		cursor: pointer;
+		font-size: 2rem;
+		margin: 1rem;
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+
+	> .off-canvas__list {
+		border-color: $vdkgrey;
+		border-style: solid;
+		border-width: 0 0 1px;
+	}
+}
+
+// Off-canvas 'active' position
+.js .off-canvas-active {
+	left: 0;
+}
+
+// Sub Nav title
+.off-canvas__title {
+	display: none;
+	@media screen and (min-width: 569px) {
+		display: block;
+	}
+}

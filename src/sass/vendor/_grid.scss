@@ -21,6 +21,7 @@
 	float: left;
 	width: 100%;
 	padding: 10px;
+	text-align: left;
 }
 
 /* This ensures the outer gutters are equal to the (doubled) inner gutters. */
@@ -42,7 +43,7 @@
 /* Wrapping at a maximum width is optional */
 .wrap .grid,
 .grid.wrap {
-	max-width: 978px;
+	max-width: 1000px;
 	margin: 0 auto;
 }
 

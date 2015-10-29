@@ -1,42 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>Multiple File Opener</title>
 	<link rel="stylesheet" href="dist/css/styles.css">
+	<script>document.documentElement.className = document.documentElement.className.replace("no-js", "js");</script>
 </head>
 <body>
 
 	<div class="wrap">
 
-		<section class="section__options wider grid">
+		<header class="site-header grid">
+
+			<div class="triggers">
+				<div id="js-info" class="trigger trigger--info fa fa-info"></div>
+				<div id="js-config" class="trigger trigger--config fa fa-cog"></div>
+			</div>
 
 			<div class="unit whole">
 				<h1 class="heading--h1">mf openr</h1>
 				<h2 class="heading--h2">A tool for opening multiple Alpine static content files in Sublime Text</h2>
 			</div>
 
+		</header>
+
+		<div class="off-canvas">
+
+			<div class="close-panel">
+				<div id="js-close-info" class="trigger--close fa fa-times"></div>
+			</div>
+
+			<section class="section--instructions">
+
+				<h3>Instructions</h3>
+
+				<div class="container container--instructions">
+
+					<ol>
+						<li>Enter the name of your Alpine git folder (if different).</li>
+						<li>Enter the root path to the relevant folders.</li>
+						<li>Select which sites you want to edit.</li>
+						<li>Copy the generated code to the terminal.</li>
+					</ol>
+
+				</div>
+
+			</section>
+
+		</div>
+
+		<section class="section--config">
+
+		</section>
+
+
+		<section class="section__options wider grid">
+
 			<div class="unit half">
 
 				<div class="info-box expandable">
-					<div class="header">
-						<h3>Instructions</h3>
-					</div>
-					<div class="content">
-
-						<div class="container container--instructions">
-
-							<ol>
-								<li>Enter the name of your Alpine git folder (if different).</li>
-								<li>Enter the root path to the relevant folders.</li>
-								<li>Select which sites you want to edit.</li>
-								<li>Copy the generated code to the terminal.</li>
-							</ol>
-
-						</div>
-
-					</div>
 				</div>
 
 			</div>

@@ -5,6 +5,7 @@ $(document).ready(function () {
 	Gdz.Global.checkboxFilter();
 	Gdz.Global.checkAll();
 	Gdz.Global.init();
+	Gdz.Panel.init();
 
 	$( '#button' ).on( 'click', function(){
 		Gdz.Global.run();
