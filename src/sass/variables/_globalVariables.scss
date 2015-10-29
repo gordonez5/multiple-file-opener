@@ -1,0 +1,23 @@
+// Typography
+$defaultFontSize: 16px;
+
+// Base Colours
+$white: #fefefe;
+$black: #232332;
+$vltgrey:#F7F7F7;
+$ltgrey: #efefef;
+$dkgrey: darken($ltgrey, 10%);
+$vdkgrey: darken($dkgrey, 20%);
+$red: #e40046;
+
+// Misc
+$unit-default: 1rem;
+
+// Breakpoints
+// $mobilePortrait: 'only screen and (max-width: 450px)';
+$mobilePortrait: 'only screen and (min-width: 450px)';
+$mobile: 'only screen and (min-width: 569px)';
+$tabletLandscape: 'only screen and (min-width: 769px)';
+$desktopSmall: 'only screen and (min-width: 900px)';
+
+

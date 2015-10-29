@@ -1,0 +1,61 @@
+.section--home {
+	background-color: #7FA0D3;
+	background-image: url(/img/batters-boxes-1600x525.jpg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: 50% 50%;
+	padding-top: 80px;
+	h1 {
+		font-weight: 400;
+		font-size: 2em;
+		color: $spamYellow;
+	}
+	.btn--outline {
+		color: $spamYellow;
+	}
+	@media screen and (min-width: 720px) {
+		padding-top: 100px;
+	}
+	@media screen and (min-width: 1000px) {
+		padding-left: 100px;
+		padding-right: 100px;
+	}
+}
+
+.site-banner {
+	/*padding: 2em;*/
+	min-height: 350px;
+	.anniversary {
+		padding: 0 33%;
+		@media screen and (min-width: 720px) {
+			padding: 2em;
+		}
+		img {
+			max-width: 14.75rem;
+			width: 100%;
+		}
+	}
+}
+
+.site-banner__content {
+	color: #fff;
+	@media screen and (min-width: 720px) {
+		padding: $unit-default;
+	}
+	/*padding-right: 2em;*/
+	/*text-align: left;*/
+}
+
+
+.tournament-date {
+	font-weight: 400;
+	font-size: 1.5rem;
+	line-height: 1;
+	margin-bottom: 1em;
+	span {
+		display: block;
+	}
+}
+
+

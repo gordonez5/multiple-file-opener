@@ -1,7 +1,19 @@
 Gdz.Global = {
 
+	consoleCheck: function(){
+
+		'use strict';
+
+		if (typeof console == 'undefined') {
+			window.console = {
+				log: function () {}
+			};
+		}
+	},
+
 	// Slideable content function.
 	slideToggle: function() {
+
 		'use strict';
 
 		// Unbind the slide toggle click
@@ -24,6 +36,7 @@ Gdz.Global = {
 	},
 
 	checkboxFilter: function() {
+
 		'use strict';
 
 		// $('.results > li').hide();
@@ -49,7 +62,22 @@ Gdz.Global = {
 		});
 	},
 
+	checkAll: function() {
+
+		'use strict';
+
+		$( '.checkall' ).find( 'input' ).toggle(function(){
+			$( 'input:checkbox' ).attr( 'checked', 'checked' );
+			$(this).val( 'uncheck all' );
+		},function(){
+			$( 'input:checkbox' ).removeAttr( 'checked' ).removeClass( 'selected' );
+			$(this).val( 'check all' );
+		});
+
+	},
+
 	createCommand: function( gitpath, folder, type, subl ) {
+
 		'use strict';
 
 		// var gitfolder = 'alpine-git';
@@ -119,7 +147,6 @@ Gdz.Global = {
 
 		var hasConfig = Gdz.Cookies.checkCookie( 'mfo-config' ),
 			gitpath,
-			folder,
 			type,
 			typeHtml = $( '#html' ),
 			typeCss = $( '#css' ),
@@ -143,7 +170,7 @@ Gdz.Global = {
 
 			if ( type == 'html' ) {
 				typeHtml.attr( 'checked', 'checked' );
-			} else if ( type = 'css' ) {
+			} else if ( type == 'css' ) {
 				typeCss.attr( 'checked', 'checked' );
 			}
 
@@ -201,6 +228,8 @@ Gdz.Global = {
 		'use strict';
 
 		this.getOptions();
+		this.consoleCheck();
+		Gdz.Cookies.noCookieMessage( '.footer__main' );
 
 	}
 

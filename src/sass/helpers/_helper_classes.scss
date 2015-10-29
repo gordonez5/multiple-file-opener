@@ -1,0 +1,25 @@
+// Clearfix :: from http://nicolasgallagher.com/micro-clearfix-hack/
+// Alternatively use compass mixin http://compass-style.org/reference/compass/utilities/general/clearfix/#mixin-pie-clearfix
+.clearfix:before,
+.clearfix:after {
+	content: " ";
+	display: table;
+}
+.clearfix:after {
+	clear: both;
+}
+// For IE 6/7 only
+.clearfix {
+	*zoom: 1;
+}
+
+
+// from css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/
+.word-break {
+	-ms-word-break: break-all;
+	word-break: break-all;
+	word-break: break-word;
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	hyphens: auto;
+}

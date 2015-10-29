@@ -1,0 +1,13 @@
+html {
+	box-sizing: border-box;
+	// font-size: 62.5%;
+}
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+@import 'layout';
+@import 'typography';
+@import 'header';
+@import 'info-boxes';
+@import 'footer';

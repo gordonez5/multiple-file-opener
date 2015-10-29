@@ -1,0 +1,90 @@
+.container label {
+	display: inline-block;
+	vertical-align: baseline;
+}
+
+.field {
+	padding: 0 0 1rem 0;
+}
+
+.field label {
+	min-width: 8rem;
+}
+
+.container--folder label,
+.container--code label {
+	display: block;
+	margin-bottom: 0.5em;
+}
+
+.checks {
+	/*display: inline-block;*/
+	float: left;
+	/*max-width: 45%;*/
+	padding: 0 1rem 1rem;
+}
+
+.checks label {
+	display: block;
+	margin: 0.5rem 0;
+}
+
+.checks input,
+.checks span {
+	margin: 0.5rem 0.25rem;
+}
+
+.container input[type="text"] {
+	border-color: #ccc;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 2px;
+	display: inline-block;
+	font-size: 1.8rem;
+	margin-right: 1rem;
+	min-width: 15rem;
+	padding: 0.5rem;
+}
+
+.container input[type="text"]:focus,
+.container textarea:focus {
+	border-color: #005959;
+	outline: 0;
+	-webkit-transition: border-color 0.2s ease-out;
+	-moz-transition: border-color 0.2s ease-out;
+	transition: border-color 0.2s ease-out;
+}
+
+.container--folder input[type="text"] {
+	width: 100%;
+}
+
+.container textarea {
+	border-color: #cee1e1;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 2px;
+	font-family: consolas, monospace;
+	/*font-size: 1rem;*/
+	width: 100%;
+	padding: 1em 1em 1em 3em;
+}
+
+.container textarea:focus {
+	background-color: #252a32;
+	color: #fff;
+}
+
+.textarea-wrap {
+	position: relative;
+}
+
+.textarea-wrap:before {
+	color: #ccc;
+	content: '$';
+	position: absolute;
+	/*width: 10px;*/
+	/*height: 10px;*/
+	top: 14px;
+	left: 24px;
+}

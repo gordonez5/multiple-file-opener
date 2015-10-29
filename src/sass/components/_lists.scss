@@ -1,0 +1,31 @@
+dl {
+	display: inline-block;
+	overflow: hidden;
+	// @include border($spamLightBlue, solid, 0 5px);
+	// margin: 0 auto $unit-default;
+	// padding: 0 ($unit-default * 2);
+}
+
+dt,
+dd {
+	float: left;
+	margin: 0 0 ($unit-default / 2);
+	overflow: hidden;
+	text-align: left;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	&:last-of-type {
+		margin-bottom: 0;
+	}
+}
+
+dt {
+	clear: left;
+	font-weight: 700;
+	min-width: 5rem;
+}
+
+dd {
+	// min-width: 70%;
+}
+

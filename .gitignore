@@ -1,4 +1,6 @@
 .*
 !.gitignore
+
 css-toggle-switch/
-css/toggle-switch-rem.css
+dist/
+node_modules/
