@@ -16,7 +16,7 @@
 	// Off-canvas styles
 	.js & {
 		height: 100%;
-		left: 100%;
+		left: -100%;
 		position: fixed;
 		top: 0;
 	}
@@ -34,7 +34,7 @@
 		font-size: 18px;
 		line-height: 1;
 		min-height: 4rem;
-		padding: $unit-default ( $unit-default * 2 ) 0.7em $unit-default;;
+		padding: $unit-default ( $unit-default * 2 ) 0.7em $unit-default;
 		position: relative;
 		text-transform: uppercase;
 		vertical-align: middle;

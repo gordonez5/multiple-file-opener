@@ -6,8 +6,9 @@ $(document).ready(function () {
 	Gdz.Global.checkAll();
 	Gdz.Global.init();
 	Gdz.Panel.init();
+	Gdz.Tabs.init();
 
-	$( '#button' ).on( 'click', function(){
+	$( '#js-run' ).on( 'click', function(){
 		Gdz.Global.run();
 	});
 

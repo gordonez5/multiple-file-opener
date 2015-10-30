@@ -18,6 +18,7 @@ gulp.task('scripts', function() {
 		'./src/js/modules/Gdz.Helpers.js',
 		'./src/js/modules/Gdz.Cookies.js',
 		'./src/js/modules/Gdz.Panel.js',
+		'./src/js/modules/Gdz.Tabs.js',
 		'./src/js/modules/Gdz.Global.js',
 		// './src/js/vendor/plugins/responsive-nav.js',
 		// './src/js/vendor/plugins/fastclick.js',

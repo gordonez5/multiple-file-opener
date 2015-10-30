@@ -66,16 +66,46 @@ Gdz.Global = {
 
 		'use strict';
 
-		$( '.checkall' ).find( 'input' ).toggle(function(){
-			$( 'input:checkbox' ).attr( 'checked', 'checked' );
-			$(this).val( 'uncheck all' );
-		},function(){
-			$( 'input:checkbox' ).removeAttr( 'checked' ).removeClass( 'selected' );
-			$(this).val( 'check all' );
+		var $btn = $( '#js-checkall' ),
+			$chks = $( '.container--checks' ).find( 'input:checkbox' ),
+			allChecked = false;
+
+		$( '#js-checkall' ).on( 'click', function(){
+
+			var checked = !$(this).data('checked');
+			$chks.prop('checked', checked);
+			$btn.val(checked ? 'uncheck all' : 'check all' );
+			$btn.data('checked', checked);
+
+			// if ( allChecked ) {
+
+			// 	$btn.val( 'uncheck all' );
+
+			// } else {
+
+			// 	$btn.val( 'check all' );
+			// 	allChecked = true;
+
+			// }
+
 		});
+
+
+		console.log($chks.length);
+
+
+
+		// 	$( 'input:checkbox' ).attr( 'checked', 'checked' );
+		// 	$(this).val( 'uncheck all' );
+		// },function(){
+		// 	$( 'input:checkbox' ).removeAttr( 'checked' ).removeClass( 'selected' );
+		// 	$(this).val( 'check all' );
+		// });
 
 	},
 
+	// Creates a string from the options and selected items.
+	// Outputs command to textarea and pre-selects it for copying.
 	createCommand: function( gitpath, folder, type, subl ) {
 
 		'use strict';
@@ -141,6 +171,7 @@ Gdz.Global = {
 		return true;
 	},
 
+	// Reads cookie - if it exists - and sets options. Falls back to defaults.
 	getOptions: function() {
 
 		'use strict';
@@ -189,6 +220,7 @@ Gdz.Global = {
 
 	},
 
+	// Sets current options to a cookie
 	setOptions: function( gitpath, type, subl ) {
 
 		'use strict';
@@ -197,6 +229,7 @@ Gdz.Global = {
 
 	},
 
+	// Runs the setOptions and createCommand methods
 	run: function() {
 
 		'use strict';
@@ -223,6 +256,7 @@ Gdz.Global = {
 
 	},
 
+	// Runs on page load
 	init: function() {
 
 		'use strict';

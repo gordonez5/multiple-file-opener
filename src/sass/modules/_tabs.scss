@@ -1,0 +1,75 @@
+// Simple tabs
+
+.page-tabs {
+	margin: 0 auto 2rem;
+	padding: 0 1rem;
+	@media screen and (min-width: 569px) {
+		// max-width: 700px;
+	}
+}
+
+.panel-tabs {
+	margin: 2rem auto;
+	padding: 0 1rem;
+	@media screen and (min-width: 569px) {
+		max-width: 700px;
+	}
+}
+
+.gdz-tabs {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.gdz-tabs__tab {
+	cursor: pointer;
+	display: inline-block;
+	font-size: 2rem;
+	line-height: 1;
+	margin-right: 0.25rem;
+	min-width: 5rem;
+	padding: 0.5rem;
+	text-align: center;
+	z-index: 2;
+	.page-tabs &,
+	.panel-tabs & {
+		background-color: #09a883;
+		border-color: #005959;
+		border-style: solid;
+		border-width: 0 0 1px;
+		color: $white;
+		// font-family: $brandFontHeading;
+		text-transform: uppercase;
+	}
+	&.active {
+		.page-tabs &,
+		.panel-tabs & {
+			background-color: $white;
+			border-bottom-color: $white;
+			border-width: 1px;
+			color: $black;
+		}
+	}
+}
+
+
+.gdz-tabs__content {
+	display: none;
+	margin: -1px 0 0;
+	padding: 1rem;
+	.page-tabs &,
+	.panel-tabs & {
+		background: $white;
+		border-color: #005959;
+		border-style: solid;
+		border-width: 1px;
+	}
+	h3 {
+		margin: 0 0 1rem;
+	}
+}
+
+.gdz-tabs__content.active {
+	display: inherit;
+}

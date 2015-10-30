@@ -8,10 +8,10 @@ Gdz.Panel = {
 			$panel = $('.off-canvas'),
 			isPanelActive = false;
 
-			console.log($panel);
+			// console.log($panel);
 
 		// Add / remove 'off-canvas-active' class to trigger slide-in navigation
-		$document.on('click', '#js-info, #js-close-nav', function(e) {
+		$document.on('click', '#js-config, #js-close-config', function(e) {
 
 			e.preventDefault();
 
