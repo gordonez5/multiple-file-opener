@@ -1,3 +1,4 @@
+/* global require, console */
 'use strict';
 
 var gulp = require('gulp');
@@ -5,11 +6,18 @@ var gulp = require('gulp');
 // require other packages
 var concat = require('gulp-concat');
 var cssmin = require('gulp-minify-css');
+var notifier = require('node-notifier');
 var rename = require('gulp-rename');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var uglify = require('gulp-uglify');
 
+var msg = function( title, message ){
+	notifier.notify({
+		title: title,
+		message: message
+	});
+};
 
 // scripts task
 gulp.task('scripts', function() {
@@ -19,6 +27,7 @@ gulp.task('scripts', function() {
 		'./src/js/modules/Gdz.Cookies.js',
 		'./src/js/modules/Gdz.Panel.js',
 		'./src/js/modules/Gdz.Tabs.js',
+		'./src/js/modules/Gdz.Checkboxes.js',
 		'./src/js/modules/Gdz.Global.js',
 		// './src/js/vendor/plugins/responsive-nav.js',
 		// './src/js/vendor/plugins/fastclick.js',
@@ -74,11 +83,11 @@ gulp.task('watch', function() {
 	gulp.watch([
 		'./src/js/*.js',
 		'./src/js/**/*.js'
-	], ['scripts']);
+	], ['scripts'], msg( 'Javascript Build', 'Built app.js' ));
 	gulp.watch([
 		'./src/sass/*.scss',
 		'./src/sass/**/*.scss'
-	], ['styles']);
+	], ['styles'], msg( 'Sass Build', 'Built styles.css' ));
 });
 
 gulp.task('default', ['scripts', 'styles', 'watch']);
