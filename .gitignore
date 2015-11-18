@@ -2,5 +2,6 @@
 !.gitignore
 
 css-toggle-switch/
-dist/
 node_modules/
+
+dist/css/maps/
