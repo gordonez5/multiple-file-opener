@@ -1,6 +1,7 @@
 html {
 	box-sizing: border-box;
 	// font-size: 62.5%;
+	height: 100%;
 }
 *, *:before, *:after {
 	box-sizing: inherit;
@@ -9,5 +10,5 @@ html {
 @import 'layout';
 @import 'typography';
 @import 'header';
-@import 'info-boxes';
+// @import 'info-boxes';
 @import 'footer';

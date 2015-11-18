@@ -3,24 +3,22 @@ body {
 	-ms-text-size-adjust: 100%;
 	text-size-adjust: 100%;
 	color: $black;
-	/*background: #fff;*/
+	background-color: $vltgrey;
 	/*font: normal 100%/1.4 sans-serif;*/
 	font-family: 'open sans', sans-serif;
 	font-size: 16px;
 }
 
 section {
-	border-bottom: 1px solid #999;
 	padding: 1rem 0;
 	width: 100%;
 	@media screen and (min-width: 600px) {
-		padding: 2rem;
+		// padding: 2rem;
 	}
 }
 
 .wrap {
 	margin: 0 auto;
-	background: #fff;
 	overflow: hidden;
 }
 

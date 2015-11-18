@@ -134,41 +134,41 @@
 						<div class="unit one-third checks sites">
 							<h3>Agent:</h3>
 							<label>
-								<input class="agent thomson summer" name="sites" type="checkbox" value="agent/52/"><span>Thomson Lakes (agent)</span>
+								<input class="checks__input" data-customer="agent" data-brand="thomson" data-season="summer" name="sites" type="checkbox" value="agent/52/"><span>Thomson Lakes (agent)</span>
 							</label>
 							<label>
-								<input class="agent crystal summer" name="sites" type="checkbox" value="agent/70/"><span>Crystal Summer (agent)</span>
+								<input class="checks__input" data-customer="agent" data-brand="crystal" data-season="summer" name="sites" type="checkbox" value="agent/70/"><span>Crystal Summer (agent)</span>
 							</label>
 							<label>
-								<input class="agent crystal summer" name="sites" type="checkbox" value="agent/71/"><span>Crystal Summer IE (agent)</span>
+								<input class="checks__input" data-customer="agent" data-brand="crystal" data-season="summer" name="sites" type="checkbox" value="agent/71/"><span>Crystal Summer IE (agent)</span>
 							</label>
 							<label>
-								<input class="agent crystal winter" name="sites" type="checkbox" value="agent/78/"><span>Crystal Ski (agent)</span>
+								<input class="checks__input" data-customer="agent" data-brand="crystal" data-season="winter" name="sites" type="checkbox" value="agent/78/"><span>Crystal Ski (agent)</span>
 							</label>
 							<label>
-								<input class="agent crystal winter" name="sites" type="checkbox" value="agent/81/"><span>Crystal Ski IE (agent)</span>
+								<input class="checks__input" data-customer="agent" data-brand="crystal" data-season="winter" name="sites" type="checkbox" value="agent/81/"><span>Crystal Ski IE (agent)</span>
 							</label>
 						</div>
 
 						<div class="unit one-third checks sites">
 							<h3>Direct:</h3>
 							<label>
-								<input class="direct thomson summer" name="sites" type="checkbox" value="direct/52/"><span>Thomson Lakes (direct)</span>
+								<input class="checks__input" data-customer="direct" data-brand="thomson" data-season="summer" name="sites" type="checkbox" value="direct/52/"><span>Thomson Lakes (direct)</span>
 							</label>
 							<label>
-								<input class="direct crystal summer" name="sites" type="checkbox" value="direct/70/"><span>Crystal Summer (direct)</span>
+								<input class="checks__input" data-customer="direct" data-brand="crystal" data-season="summer" name="sites" type="checkbox" value="direct/70/"><span>Crystal Summer (direct)</span>
 							</label>
 							<label>
-								<input class="direct crystal summer" name="sites" type="checkbox" value="direct/71/"><span>Crystal Summer IE (direct)</span>
+								<input class="checks__input" data-customer="direct" data-brand="crystal" data-season="summer" name="sites" type="checkbox" value="direct/71/"><span>Crystal Summer IE (direct)</span>
 							</label>
 							<label>
-								<input class="direct crystal winter" name="sites" type="checkbox" value="direct/78/"><span>Crystal Ski (direct)</span>
+								<input class="checks__input" data-customer="direct" data-brand="crystal" data-season="winter" name="sites" type="checkbox" value="direct/78/"><span>Crystal Ski (direct)</span>
 							</label>
 							<label>
-								<input class="direct thomson winter" name="sites" type="checkbox" value="direct/79/"><span>Thomson Ski (direct)</span>
+								<input class="checks__input" data-customer="direct" data-brand="thomson" data-season="winter" name="sites" type="checkbox" value="direct/79/"><span>Thomson Ski (direct)</span>
 							</label>
 							<label>
-								<input class="direct crystal winter" name="sites" type="checkbox" value="direct/81/"><span>Crystal Ski IE (direct)</span>
+								<input class="checks__input" data-customer="direct" data-brand="crystal" data-season="winter" name="sites" type="checkbox" value="direct/81/"><span>Crystal Ski IE (direct)</span>
 							</label>
 						</div>
 
@@ -182,37 +182,36 @@
 
 				<div id="tab-code" class="gdz-tabs__content">
 
+					<div class="grid container">
 
+						<div class="unit half container container--folder">
+							<div class="field">
+								<label for="folder">Folder:</label>
+								<input class="folder" id="folder" name="folder" type="text" placeholder="eg. ski-resorts/france-ski-holidays">
+							</div>
+							<div class="run">
+								<input type="button" id="js-run" class="btn btn-primary" value="Go">
+							</div>
+						</div>
 
-				</div>
+						<div class="unit half container container--code">
+							<div class="field">
+								<label for="code">Code:</label>
+								<div class="textarea-wrap">
+									<textarea name="code" id="code" cols="15" rows="15"></textarea>
+								</div>
+							</div>
+						</div>
 
-
-			</div>
-
-		</section>
-
-		<section class="section__tool wider grid">
-
-			<div class="unit half container container--folder">
-				<div class="field">
-					<label for="folder">Folder:</label>
-					<input class="folder" id="folder" name="folder" type="text" placeholder="eg. ski-resorts/france-ski-holidays">
-				</div>
-				<div class="run">
-					<input type="button" id="js-run" class="btn btn-primary" value="Go">
-				</div>
-			</div>
-
-			<div class="unit half container container--code">
-				<div class="field">
-					<label for="code">Code:</label>
-					<div class="textarea-wrap">
-						<textarea name="code" id="code" cols="15" rows="15"></textarea>
 					</div>
+
 				</div>
+
+
 			</div>
 
 		</section>
+
 
 		<footer class="footer__main">
 
