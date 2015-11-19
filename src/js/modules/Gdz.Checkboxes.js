@@ -1,4 +1,3 @@
-/* global console */
 Gdz.Checkboxes = {
 
 	checkboxFilter: function() {
@@ -13,30 +12,39 @@ Gdz.Checkboxes = {
 
 		filters.on( 'change', function () {
 
-			// console.log('clicked');
-
 			// get checked filters
 			var checkedFilters = $( '.filters' ).find( 'input:checked' );
-
 			console.log('checkedFilters length: ' + checkedFilters.length);
 
-			checkedFilters.each(function () {
-
-				console.log('checkedFilters');
+			// checkedFilters.each(function () {
 
 				var $this = $(this);
 				var rel = $this.attr( 'rel' );
+				var name = $this.attr( 'name' );
 
-				console.log('rel: ' + rel);
+				console.log('this: ' + $this);
+				// console.log('rel: ' + rel);
+				// console.log('name: ' + name);
 
-				// var match = $('.sites input.' + rel);
-				items.attr( 'checked', false );
-
+				// items.attr( 'checked', false );
+				var $match = $( '.sites .checks__input[data-' + name + '="' + rel + '"]');
 				// console.log(match);
 
-				$( '.sites .' + rel).addClass( 'selected' );
-				$( '.sites' ).find( '.selected' ).attr( 'checked', true );
-			});
+				if ( $this.is(':checked') ) {
+
+					console.log( 'this is checked' );
+					$match.addClass( 'selected' ).prop( 'checked', true );
+
+				} else {
+
+					console.log( 'this is not checked' );
+					$match.removeClass( 'selected' ).prop( 'checked', false );
+
+				};
+
+				// $match.addClass( 'selected' );
+				// $( '.sites' ).find( '.selected' ).attr( 'checked', true );
+			// });
 
 		});
 	},
