@@ -9,7 +9,7 @@ dl {
 dt,
 dd {
 	float: left;
-	margin: 0 0 ($unit-default / 2);
+	margin: 0 0 ( $unit-default / 2 );
 	overflow: hidden;
 	text-align: left;
 	text-overflow: ellipsis;
@@ -29,3 +29,9 @@ dd {
 	// min-width: 70%;
 }
 
+.list_alpha {
+	margin: 0 0 $unit-default;
+	li {
+		padding: 0.3rem 0;
+	}
+}

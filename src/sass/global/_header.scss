@@ -17,3 +17,24 @@
 .trigger--config {
 	right: 0;
 }
+
+// LOGO
+
+.site-header {
+	.logo {
+		display: block;
+		font: 0/0 normal;
+		margin-top: 0.3rem;
+		max-width: 80%;
+		text-indent: -999%;
+		@media screen and ( min-width: 600px ) {
+			margin: 0 auto;
+			max-width: 360px;
+		}
+		.logo__img {
+			display: block;
+			height: auto;
+			width: 100%;
+		}
+	}
+}

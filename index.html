@@ -19,7 +19,11 @@
 			</div>
 
 			<div class="unit whole">
-				<h1 class="heading--h1">mf openr</h1>
+				<div class="logo">
+					<img id="header-logo" class="logo__img" src="img/mf-openr_logo.svg" onerror="this.onerror=null;this.src='img/mf-openr_logo.png'">
+	                mf openr
+				</div>
+				<!-- <h1 class="heading--h1">mf openr</h1> -->
 				<!-- <h2 class="heading--h2">A tool for opening multiple Alpine static content files in Sublime Text</h2> -->
 			</div>
 
@@ -79,13 +83,24 @@
 				</div>
 
 				<div id="tab-instructions" class="gdz-tabs__content">
+
 					<h3>Instructions</h3>
-					<ol>
-						<li>Enter the name of your Alpine git folder (if different).</li>
-						<li>Enter the root path to the relevant folders.</li>
+
+					<h4>Quick start:</h4>
+					<ol class="list_alpha">
 						<li>Select which sites you want to edit.</li>
+						<li>Enter the root path to the relevant folders.</li>
 						<li>Copy the generated code to the terminal.</li>
 					</ol>
+
+					<h4>Setup:</h4>
+					<ol class="list_alpha">
+						<li>Enter the name of the Alpine folder where the repo is located <em>[default: alpine-git]</em></li>
+						<li>Choose a file type <em>[default: html]</em></li>
+						<li>Select whether you have <strong>subl</strong> installed <em>[default: yes]</em></li>
+					</ol>
+					<p><small>Once you run the tool, your preferences will be saved to a cookie.</small></p>
+
 				</div>
 
 			</div>
@@ -107,69 +122,75 @@
 
 					<div class="grid container container--checks">
 
-						<div class="unit one-third checks filters">
+						<div class="unit one-third">
 							<h3>Filters:</h3>
-							<label>
-								<input rel="crystal" name="brand" type="checkbox" value="crystal"><span>Crystal</span>
-							</label>
-							<label>
-								<input rel="thomson" name="brand" type="checkbox" value="thomson"><span>Thomson</span>
-							</label>
-							<span class="hr"></span>
-							<label>
-								<input rel="winter" name="season" type="checkbox" value="winter"><span>winter</span>
-							</label>
-							<label>
-								<input rel="summer" name="season" type="checkbox" value="summer"><span>summer</span>
-							</label>
-							<span class="hr"></span>
-							<label>
-								<input rel="direct" name="customer" type="checkbox" value="direct"><span>direct</span>
-							</label>
-							<label>
-								<input rel="agent" name="customer" type="checkbox" value="agent"><span>agent</span>
-							</label>
+							<div class="checks filters">
+								<label>
+									<input rel="crystal" name="brand" type="checkbox" value="crystal"><span>Crystal</span>
+								</label>
+								<label>
+									<input rel="thomson" name="brand" type="checkbox" value="thomson"><span>Thomson</span>
+								</label>
+								<span class="hr"></span>
+								<label>
+									<input rel="winter" name="season" type="checkbox" value="winter"><span>winter</span>
+								</label>
+								<label>
+									<input rel="summer" name="season" type="checkbox" value="summer"><span>summer</span>
+								</label>
+								<span class="hr"></span>
+								<label>
+									<input rel="direct" name="customer" type="checkbox" value="direct"><span>direct</span>
+								</label>
+								<label>
+									<input rel="agent" name="customer" type="checkbox" value="agent"><span>agent</span>
+								</label>
+							</div>
 						</div>
 
-						<div class="unit one-third checks sites">
+						<div class="unit one-third">
 							<h3>Agent:</h3>
-							<label>
-								<input class="checks__input" data-customer="agent" data-brand="thomson" data-season="summer" name="sites" type="checkbox" value="agent/52/"><span>Thomson Lakes (agent)</span>
-							</label>
-							<label>
-								<input class="checks__input" data-customer="agent" data-brand="crystal" data-season="summer" name="sites" type="checkbox" value="agent/70/"><span>Crystal Summer (agent)</span>
-							</label>
-							<label>
-								<input class="checks__input" data-customer="agent" data-brand="crystal" data-season="summer" name="sites" type="checkbox" value="agent/71/"><span>Crystal Summer IE (agent)</span>
-							</label>
-							<label>
-								<input class="checks__input" data-customer="agent" data-brand="crystal" data-season="winter" name="sites" type="checkbox" value="agent/78/"><span>Crystal Ski (agent)</span>
-							</label>
-							<label>
-								<input class="checks__input" data-customer="agent" data-brand="crystal" data-season="winter" name="sites" type="checkbox" value="agent/81/"><span>Crystal Ski IE (agent)</span>
-							</label>
+							<div class="checks sites">
+								<label>
+									<input class="checks__input" data-customer="agent" data-brand="thomson" data-season="summer" name="sites" type="checkbox" value="agent/52/"><span>Thomson Lakes (agent)</span>
+								</label>
+								<label>
+									<input class="checks__input" data-customer="agent" data-brand="crystal" data-season="summer" name="sites" type="checkbox" value="agent/70/"><span>Crystal Summer (agent)</span>
+								</label>
+								<label>
+									<input class="checks__input" data-customer="agent" data-brand="crystal" data-season="summer" name="sites" type="checkbox" value="agent/71/"><span>Crystal Summer IE (agent)</span>
+								</label>
+								<label>
+									<input class="checks__input" data-customer="agent" data-brand="crystal" data-season="winter" name="sites" type="checkbox" value="agent/78/"><span>Crystal Ski (agent)</span>
+								</label>
+								<label>
+									<input class="checks__input" data-customer="agent" data-brand="crystal" data-season="winter" name="sites" type="checkbox" value="agent/81/"><span>Crystal Ski IE (agent)</span>
+								</label>
+							</div>
 						</div>
 
-						<div class="unit one-third checks sites">
+						<div class="unit one-third">
 							<h3>Direct:</h3>
-							<label>
-								<input class="checks__input" data-customer="direct" data-brand="thomson" data-season="summer" name="sites" type="checkbox" value="direct/52/"><span>Thomson Lakes (direct)</span>
-							</label>
-							<label>
-								<input class="checks__input" data-customer="direct" data-brand="crystal" data-season="summer" name="sites" type="checkbox" value="direct/70/"><span>Crystal Summer (direct)</span>
-							</label>
-							<label>
-								<input class="checks__input" data-customer="direct" data-brand="crystal" data-season="summer" name="sites" type="checkbox" value="direct/71/"><span>Crystal Summer IE (direct)</span>
-							</label>
-							<label>
-								<input class="checks__input" data-customer="direct" data-brand="crystal" data-season="winter" name="sites" type="checkbox" value="direct/78/"><span>Crystal Ski (direct)</span>
-							</label>
-							<label>
-								<input class="checks__input" data-customer="direct" data-brand="thomson" data-season="winter" name="sites" type="checkbox" value="direct/79/"><span>Thomson Ski (direct)</span>
-							</label>
-							<label>
-								<input class="checks__input" data-customer="direct" data-brand="crystal" data-season="winter" name="sites" type="checkbox" value="direct/81/"><span>Crystal Ski IE (direct)</span>
-							</label>
+							<div class="checks sites">
+								<label>
+									<input class="checks__input" data-customer="direct" data-brand="thomson" data-season="summer" name="sites" type="checkbox" value="direct/52/"><span>Thomson Lakes (direct)</span>
+								</label>
+								<label>
+									<input class="checks__input" data-customer="direct" data-brand="crystal" data-season="summer" name="sites" type="checkbox" value="direct/70/"><span>Crystal Summer (direct)</span>
+								</label>
+								<label>
+									<input class="checks__input" data-customer="direct" data-brand="crystal" data-season="summer" name="sites" type="checkbox" value="direct/71/"><span>Crystal Summer IE (direct)</span>
+								</label>
+								<label>
+									<input class="checks__input" data-customer="direct" data-brand="crystal" data-season="winter" name="sites" type="checkbox" value="direct/78/"><span>Crystal Ski (direct)</span>
+								</label>
+								<label>
+									<input class="checks__input" data-customer="direct" data-brand="thomson" data-season="winter" name="sites" type="checkbox" value="direct/79/"><span>Thomson Ski (direct)</span>
+								</label>
+								<label>
+									<input class="checks__input" data-customer="direct" data-brand="crystal" data-season="winter" name="sites" type="checkbox" value="direct/81/"><span>Crystal Ski IE (direct)</span>
+								</label>
+							</div>
 						</div>
 
 						<div class="unit whole checkall">

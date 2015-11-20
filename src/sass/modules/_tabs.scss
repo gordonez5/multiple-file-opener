@@ -66,7 +66,13 @@
 		border-width: 1px;
 	}
 	h3 {
+		color: $colorOne;
+		font-weight: normal;
 		margin: 0 0 1rem;
+		text-transform: uppercase;
+	}
+	h4 {
+		margin: 0 0 ( $unit-default / 2 );
 	}
 }
 

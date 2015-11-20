@@ -17,17 +17,13 @@
 	.js & {
 		height: 100%;
 		left: -100%;
-		position: fixed;
+		position: absolute;
 		top: 0;
 	}
 
 	// header for off-canvas panel
 	.close-panel {
 		background-color: $colorOne;
-		position: relative;
-		@media screen and (min-width: 569px) {
-			// display: none;
-		}
 		color: $white;
 		display: block;
 		// font-family: $brandFontHeading;
@@ -38,6 +34,9 @@
 		position: relative;
 		text-transform: uppercase;
 		vertical-align: middle;
+		@media screen and (min-width: 569px) {
+			// display: none;
+		}
 		.no-js & {
 			display: none;
 		}

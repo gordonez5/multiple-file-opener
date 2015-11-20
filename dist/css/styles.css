@@ -3942,6 +3942,27 @@ a:hover, a:focus, a:active {
   right: 0;
 }
 
+.site-header .logo {
+  display: block;
+  font: 0/0 normal;
+  margin-top: 0.3rem;
+  max-width: 80%;
+  text-indent: -999%;
+}
+
+@media screen and (min-width: 600px) {
+  .site-header .logo {
+    margin: 0 auto;
+    max-width: 360px;
+  }
+}
+
+.site-header .logo .logo__img {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
 .footer__main .section__footer {
   border-color: #005959;
   border-style: solid;
@@ -4032,6 +4053,14 @@ dt {
   min-width: 5rem;
 }
 
+.list_alpha {
+  margin: 0 0 1rem;
+}
+
+.list_alpha li {
+  padding: 0.3rem 0;
+}
+
 .container label {
   display: inline-block;
   vertical-align: baseline;
@@ -4053,9 +4082,7 @@ dt {
 
 .checks {
   /*display: inline-block;*/
-  float: left;
   /*max-width: 45%;*/
-  padding: 0 1rem 1rem;
 }
 
 .checks label {
@@ -4141,13 +4168,12 @@ dt {
 .js .off-canvas {
   height: 100%;
   left: -100%;
-  position: fixed;
+  position: absolute;
   top: 0;
 }
 
 .off-canvas .close-panel {
   background-color: #005959;
-  position: relative;
   color: #fefefe;
   display: block;
   font-size: 18px;
@@ -4263,7 +4289,14 @@ dt {
 }
 
 .gdz-tabs__content h3 {
+  color: #005959;
+  font-weight: normal;
   margin: 0 0 1rem;
+  text-transform: uppercase;
+}
+
+.gdz-tabs__content h4 {
+  margin: 0 0 0.5rem;
 }
 
 .gdz-tabs__content.active {
