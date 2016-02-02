@@ -340,12 +340,13 @@ Gdz.Checkboxes = {
 			// checkedFilters.each(function () {
 
 				var $this = $(this);
+				var val = $this.html();
 				var rel = $this.attr( 'rel' );
 				var name = $this.attr( 'name' );
 
-				console.log('this: ' + $this);
-				// console.log('rel: ' + rel);
-				// console.log('name: ' + name);
+				console.log('val: ' + $this);
+				console.log('rel: ' + rel);
+				console.log('name: ' + name);
 
 				// items.attr( 'checked', false );
 				var $match = $( '.sites .checks__input[data-' + name + '="' + rel + '"]');
@@ -361,7 +362,7 @@ Gdz.Checkboxes = {
 					console.log( 'this is not checked' );
 					$match.removeClass( 'selected' ).prop( 'checked', false );
 
-				};
+				}
 
 				// $match.addClass( 'selected' );
 				// $( '.sites' ).find( '.selected' ).attr( 'checked', true );

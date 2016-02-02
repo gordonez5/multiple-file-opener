@@ -3980,12 +3980,20 @@ a:hover, a:focus, a:active {
   border-width: 0 0 4px;
   border-radius: 2px;
   cursor: pointer;
-  font-size: 1.8rem;
-  padding: 1rem 1.5rem;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
   text-align: center;
   text-decoration: none;
-  min-width: 15rem;
+  min-width: 50%;
   position: relative;
+}
+
+.checkall .btn {
+  width: 100%;
+}
+
+.run .btn {
+  font-size: 1.8rem;
 }
 
 .btn-primary {
@@ -4067,7 +4075,7 @@ dt {
 }
 
 .field {
-  padding: 0 0 1rem 0;
+  margin: 0 0 1rem 0;
 }
 
 .field label {
@@ -4091,8 +4099,127 @@ dt {
 }
 
 .checks input,
-.checks span {
+.checks.filters span {
   margin: 0.5rem 0.25rem;
+}
+
+.sites__container {
+  display: table;
+  width: 100%;
+}
+
+.sites__row {
+  display: flex;
+  margin-bottom: 0.5em;
+}
+
+.sites__row .site {
+  flex-grow: 1;
+}
+
+.sites__row .check {
+  text-align: center;
+  width: 15%;
+}
+
+.sites__row .check .fa {
+  font-size: 2em;
+}
+
+.sites__header-row {
+  font-weight: 700;
+}
+
+.sites__data-row {
+  border-color: #d5d5d5;
+  border-style: solid;
+  border-width: 0;
+}
+
+.sites__data-row[data-site="52"] {
+  background-color: #a0c7e7;
+}
+
+.sites__data-row[data-site="52"] .site {
+  background-image: url(/multiple-file-opener/img/thomsonsummer_logo.svg);
+  background-size: 150px;
+}
+
+.sites__data-row[data-site="70"], .sites__data-row[data-site="71"] {
+  background-color: #f5f5f5;
+}
+
+.sites__data-row[data-site="70"] .site, .sites__data-row[data-site="71"] .site {
+  background-image: url(/multiple-file-opener/img/crystalsummer_logo.svg);
+}
+
+.sites__data-row[data-site="79"] {
+  background-color: #73afdc;
+}
+
+.sites__data-row[data-site="79"] .site {
+  background-image: url(/multiple-file-opener/img/thomsonwinter_logo.svg);
+  background-size: 150px;
+}
+
+.sites__data-row[data-site="71"] .site, .sites__data-row[data-site="81"] .site {
+  position: relative;
+}
+
+.sites__data-row[data-site="71"] .site:after, .sites__data-row[data-site="81"] .site:after {
+  color: #232332;
+  content: '(Ireland)';
+  display: block;
+  font-size: 1rem;
+  height: 20px;
+  left: 130px;
+  line-height: 1;
+  position: absolute;
+  text-indent: 0;
+  top: 1rem;
+  width: auto;
+}
+
+.sites__data-row .site {
+  background-image: url(/multiple-file-opener/img/crystalwinter_logo.svg);
+  background-position: 5px 10px;
+  background-repeat: no-repeat;
+  background-size: 110px;
+  padding: 0;
+  text-indent: -99999em;
+}
+
+.checks__input {
+  display: none;
+}
+
+.checks__input + .fa {
+  cursor: pointer;
+}
+
+.checks__input + .fa:before {
+  color: #a3a3a3;
+  content: "\f1db";
+}
+
+.checks__input:checked + .fa:before {
+  color: #84329b;
+  content: '\f05d';
+}
+
+[data-site="52"] .checks__input + .fa:before,
+[data-site="79"] .checks__input + .fa:before {
+  color: #fefefe;
+}
+
+[data-site="52"] .checks__input:checked + .fa:before,
+[data-site="79"] .checks__input:checked + .fa:before {
+  color: #ffe100;
+}
+
+[data-site="70"] .checks__input:checked + .fa:before,
+[data-site="71"] .checks__input:checked + .fa:before {
+  color: #55AB27;
 }
 
 .container input[type="text"] {
@@ -4103,7 +4230,7 @@ dt {
   display: inline-block;
   font-size: 1.5rem;
   margin-right: 1rem;
-  min-width: 15rem;
+  min-width: 14rem;
   padding: 0.5rem;
 }
 
@@ -4223,7 +4350,7 @@ dt {
 }
 
 .page-tabs {
-  margin: 0 auto 2rem;
+  margin: 0 auto;
   padding: 0 1rem;
 }
 
@@ -4271,7 +4398,7 @@ dt {
   background-color: #fefefe;
   border-bottom-color: #fefefe;
   border-width: 1px;
-  color: #232332;
+  color: #09a883;
 }
 
 .gdz-tabs__content {

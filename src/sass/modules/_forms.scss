@@ -4,7 +4,7 @@
 }
 
 .field {
-	padding: 0 0 1rem 0;
+	margin: 0 0 1rem 0;
 }
 
 .field label {
@@ -30,9 +30,133 @@
 }
 
 .checks input,
-.checks span {
+.checks.filters span {
 	margin: 0.5rem 0.25rem;
 }
+
+.sites__container {
+	display: table;
+	width: 100%;
+}
+
+// .sites__row {
+// 	display: table-row;
+// 	.site {
+// 		display: table-cell;
+// 	}
+// 	.check {
+// 		display: table-cell;
+// 		text-align: center;
+// 		.fa {
+// 			font-size: 2em;
+// 		}
+// 	}
+// }
+
+.sites__row {
+	display: flex;
+	margin-bottom: 0.5em;
+	.site {
+		// min-width: 200px;
+		flex-grow: 1;
+	}
+	.check {
+		text-align: center;
+		width: 15%;
+		.fa {
+			font-size: 2em;
+		}
+	}
+}
+
+.sites__header-row {
+	font-weight: 700;
+}
+
+.sites__data-row {
+	border-color: $dkgrey;
+	border-style: solid;
+	border-width: 0;
+	&[data-site="52"] {
+		background-color: #a0c7e7;
+		.site {
+			background-image: url(/multiple-file-opener/img/thomsonsummer_logo.svg);
+			background-size: 150px;
+		}
+	}
+	&[data-site="70"],
+	&[data-site="71"] {
+		background-color: #f5f5f5;
+		.site {
+			background-image: url(/multiple-file-opener/img/crystalsummer_logo.svg);
+		}
+	}
+	&[data-site="79"] {
+		background-color: #73afdc;
+		.site {
+			background-image: url(/multiple-file-opener/img/thomsonwinter_logo.svg);
+			background-size: 150px;
+		}
+	}
+	&[data-site="71"],
+	&[data-site="81"] {
+		.site {
+			position: relative;
+			&:after {
+				color: $black;
+				content: '(Ireland)';
+				display: block;
+				font-size: 1rem;
+				height: 20px;
+				left: 130px;
+				line-height: 1;
+				position: absolute;
+				text-indent: 0;
+				top: 1rem;
+				width: auto;
+			}
+		}
+	}
+	.site {
+		background-image: url(/multiple-file-opener/img/crystalwinter_logo.svg);
+		background-position: 5px 10px;
+		background-repeat: no-repeat;
+		background-size: 110px;
+		padding: 0;
+		text-indent: -99999em;
+	}
+}
+
+.checks__input {
+	display: none;
+	& + .fa {
+		cursor: pointer;
+		&:before {
+			color: $vdkgrey;
+			content: "\f1db";
+		}
+	}
+	&:checked + .fa:before {
+		color: #84329b;
+		content: '\f05d';
+	}
+	[data-site="52"] &,
+	[data-site="79"] & {
+		& + .fa:before {
+			color: $white;
+		}
+		&:checked + .fa:before {
+			color: #ffe100;
+		}
+	}
+	[data-site="70"] &,
+	[data-site="71"] & {
+		&:checked + .fa:before {
+			color: #55AB27;
+		}
+	}
+}
+
 
 .container input[type="text"] {
 	border-color: #ccc;
@@ -42,7 +166,7 @@
 	display: inline-block;
 	font-size: 1.5rem;
 	margin-right: 1rem;
-	min-width: 15rem;
+	min-width: 14rem;
 	padding: 0.5rem;
 }
 
