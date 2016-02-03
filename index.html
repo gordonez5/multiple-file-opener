@@ -4,7 +4,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>Multiple File Opener</title>
-	<link rel="stylesheet" href="dist/css/styles.css">
+	<link rel="stylesheet" href="dist/css/styles.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
 	<script>document.documentElement.className = document.documentElement.className.replace("no-js", "js");</script>
 </head>
 <body>
@@ -114,87 +115,153 @@
 
 				<ul class="gdz-tabs" role="tablist">
 					<li class="gdz-tabs__tab active" data-tab="tab-sites"><i class="fa fa-check-square-o"></i></li>
-					<li class="gdz-tabs__tab" data-tab="tab-code"><i class="fa fa-code"></i></li>
+					<li class="gdz-tabs__tab" data-tab="tab-code"><i class="fa fa-terminal"></i></li>
 				</ul>
 
 				<div id="tab-sites" class="gdz-tabs__content active">
-					<h3>Sites</h3>
 
 					<div class="grid container container--checks">
 
-						<div class="unit one-third">
-							<h3>Filters:</h3>
-							<div class="checks filters">
-								<label>
-									<input rel="crystal" name="brand" type="checkbox" value="crystal"><span>Crystal</span>
-								</label>
-								<label>
-									<input rel="thomson" name="brand" type="checkbox" value="thomson"><span>Thomson</span>
-								</label>
-								<span class="hr"></span>
-								<label>
-									<input rel="winter" name="season" type="checkbox" value="winter"><span>winter</span>
-								</label>
-								<label>
-									<input rel="summer" name="season" type="checkbox" value="summer"><span>summer</span>
-								</label>
-								<span class="hr"></span>
-								<label>
-									<input rel="direct" name="customer" type="checkbox" value="direct"><span>direct</span>
-								</label>
-								<label>
-									<input rel="agent" name="customer" type="checkbox" value="agent"><span>agent</span>
-								</label>
+						<div class="unit one-quarter">
+
+							<div class="filters">
+
+								<h4>Filters:</h4>
+
+								<div class="filter-group brand">
+									<div class="filter">
+										<input id="filterCrystal" rel="crystal" name="brand" type="checkbox" value="crystal">
+										<label for="filterCrystal" class="">Crystal sites</label>
+									</div>
+									<div class="filter">
+										<input id="filterThomson" rel="thomson" name="brand" type="checkbox" value="thomson">
+										<label for="filterThomson" class="">Thomson sites</label>
+									</div>
+								</div>
+								<div class="filter-group season">
+									<div class="filter">
+										<input id="filterWinter" rel="winter" name="season" type="checkbox" value="winter">
+										<label for="filterWinter" class="">winter sites</label>
+									</div>
+									<div class="filter">
+										<input id="filterSummer" rel="summer" name="season" type="checkbox" value="summer">
+										<label for="filterSummer" class="">summer sites</label>
+									</div>
+								</div>
+								<div class="filter-group customer">
+									<div class="filter">
+										<input id="filterDirect" rel="direct" name="customer" type="checkbox" value="direct">
+										<label for="filterDirect" class="">direct sites</label>
+									</div>
+									<div class="filter">
+										<input id="filterAgent" rel="agent" name="customer" type="checkbox" value="agent">
+										<label for="filterAgent" class="">agent sites</label>
+									</div>
+								</div>
 							</div>
+
+							<div class="checkall">
+								<button id="js-checkall" class="btn btn-secondary">check all</button>
+							</div>
+
 						</div>
 
-						<div class="unit one-third">
-							<h3>Agent:</h3>
+
+						<div class="unit three-quarters">
+
 							<div class="checks sites">
-								<label>
-									<input class="checks__input" data-customer="agent" data-brand="thomson" data-season="summer" name="sites" type="checkbox" value="agent/52/"><span>Thomson Lakes (agent)</span>
-								</label>
-								<label>
-									<input class="checks__input" data-customer="agent" data-brand="crystal" data-season="summer" name="sites" type="checkbox" value="agent/70/"><span>Crystal Summer (agent)</span>
-								</label>
-								<label>
-									<input class="checks__input" data-customer="agent" data-brand="crystal" data-season="summer" name="sites" type="checkbox" value="agent/71/"><span>Crystal Summer IE (agent)</span>
-								</label>
-								<label>
-									<input class="checks__input" data-customer="agent" data-brand="crystal" data-season="winter" name="sites" type="checkbox" value="agent/78/"><span>Crystal Ski (agent)</span>
-								</label>
-								<label>
-									<input class="checks__input" data-customer="agent" data-brand="crystal" data-season="winter" name="sites" type="checkbox" value="agent/81/"><span>Crystal Ski IE (agent)</span>
-								</label>
-							</div>
-						</div>
 
-						<div class="unit one-third">
-							<h3>Direct:</h3>
-							<div class="checks sites">
-								<label>
-									<input class="checks__input" data-customer="direct" data-brand="thomson" data-season="summer" name="sites" type="checkbox" value="direct/52/"><span>Thomson Lakes (direct)</span>
-								</label>
-								<label>
-									<input class="checks__input" data-customer="direct" data-brand="crystal" data-season="summer" name="sites" type="checkbox" value="direct/70/"><span>Crystal Summer (direct)</span>
-								</label>
-								<label>
-									<input class="checks__input" data-customer="direct" data-brand="crystal" data-season="summer" name="sites" type="checkbox" value="direct/71/"><span>Crystal Summer IE (direct)</span>
-								</label>
-								<label>
-									<input class="checks__input" data-customer="direct" data-brand="crystal" data-season="winter" name="sites" type="checkbox" value="direct/78/"><span>Crystal Ski (direct)</span>
-								</label>
-								<label>
-									<input class="checks__input" name="sites" type="checkbox" value="direct/79/"><span>Thomson Ski (direct)</span>
-								</label>
-								<label>
-									<input class="checks__input" data-customer="direct" data-brand="crystal" data-season="winter" name="sites" type="checkbox" value="direct/81/"><span>Crystal Ski IE (direct)</span>
-								</label>
-							</div>
-						</div>
+								<div class="sites__container">
+									<div class="sites__row sites__header-row">
+										<span class="site">Brand</span>
+										<span class="check">Direct</span>
+										<span class="check">Agent</span>
+									</div>
+									<div data-site="52" class="sites__row sites__data-row">
+										<span class="site">
+											<span class="site__name">Thomson Lakes</span>
+										</span>
+										<span class="check">
+											<input class="checks__input" data-customer="direct" data-brand="thomson" data-season="summer" name="sites" type="checkbox" id="52d" value="direct/52/">
+											<label for="52d" class="fa"></label>
+										</span>
+										<span class="check">
+											<input class="checks__input" data-customer="agent" data-brand="thomson" data-season="summer" name="sites" type="checkbox" id="52a" value="agent/52/">
+											<label for="52a" class="fa"></label>
+										</span>
+									</div>
+									<div data-site="70" class="sites__row sites__data-row">
+										<span class="site">
+											<span class="site__name">Crystal Summer</span>
+										</span>
+										<span class="check">
+											<input class="checks__input" data-customer="direct" data-brand="crystal" data-season="summer" name="sites" type="checkbox" id="70d" value="direct/70/">
+											<label for="70d" class="fa"></label>
+										</span>
+										<span class="check">
+											<input class="checks__input" data-customer="agent" data-brand="crystal" data-season="summer" name="sites" type="checkbox" id="70a" value="agent/70/">
+											<label for="70a" class="fa"></label>
+										</span>
+									</div>
+									<div data-site="71" class="sites__row sites__data-row">
+										<span class="site">
+											<span class="site__name">Crystal Summer IE</span>
+										</span>
+										<span class="check">
+											<input class="checks__input" data-customer="direct" data-brand="crystal" data-season="summer" name="sites" type="checkbox" id="71d" value="direct/71/">
+											<label for="71d" class="fa"></label>
+										</span>
+										<span class="check">
+											<input class="checks__input" data-customer="agent" data-brand="crystal" data-season="summer" name="sites" type="checkbox" id="71a" value="agent/71/">
+											<label for="71a" class="fa"></label>
+										</span>
+									</div>
+									<div data-site="78" class="sites__row sites__data-row">
+										<span class="site">
+											<span class="site__name">Crystal Ski</span>
+										</span>
+										<span class="check">
+											<input class="checks__input" data-customer="direct" data-brand="crystal" data-season="winter" name="sites" type="checkbox" id="78d" value="direct/78/">
+											<label for="78d" class="fa"></label>
+										</span>
+										<span class="check">
+											<input class="checks__input" data-customer="agent" data-brand="crystal" data-season="winter" name="sites" type="checkbox" id="78a" value="agent/78/">
+											<label for="78a" class="fa"></label>
+										</span>
+									</div>
+									<div data-site="81" class="sites__row sites__data-row">
+										<span class="site">
+											<span class="site__name">Crystal Ski IE</span>
+										</span>
+										<span class="check">
+											<input class="checks__input" data-customer="direct" data-brand="crystal" data-season="winter" name="sites" type="checkbox" id="81d" value="direct/81/">
+											<label for="81d" class="fa"></label>
+										</span>
+										<span class="check">
+											<input class="checks__input" data-customer="agent" data-brand="crystal" data-season="winter" name="sites" type="checkbox" id="81a" value="agent/81/">
+											<label for="81a" class="fa"></label>
+										</span>
+									</div>
+									<div data-site="79" class="sites__row sites__data-row">
+										<span class="site">
+											<span class="site__name">Thomson Ski</span>
+										</span>
+										<span class="check">
+											<input class="checks__input" data-customer="direct" data-brand="thomson" data-season="winter" name="sites" type="checkbox" id="79d" value="direct/79/">
+											<label for="79d" class="fa"></label>
+										</span>
+										<span class="check">
+										</span>
+									</div>
+								</div>
 
-						<div class="unit whole checkall">
-							<input type="button" id="js-checkall" class="btn btn-secondary" value="check all" />
+
+							</div>
+
+							<div class="next">
+								<button id="js-next" class="btn btn-tertiary chevron">next</button>
+							</div>
+
 						</div>
 
 					</div>
@@ -211,7 +278,7 @@
 								<input class="folder" id="folder" name="folder" type="text" placeholder="eg. ski-resorts/france-ski-holidays">
 							</div>
 							<div class="run">
-								<input type="button" id="js-run" class="btn btn-primary" value="Go">
+								<button id="js-run" class="btn btn-primary">Go</button>
 							</div>
 						</div>
 
@@ -238,7 +305,7 @@
 
 			<section class="section__footer grid">
 				<div class="unit whole">
-					<p class="copyright">&copy; 2015 Simon Gordon</p>
+					<p class="copyright">&copy; 2016 Simon Gordon</p>
 				</div>
 			</section>
 
@@ -247,7 +314,7 @@
 
 	</div>
 
-	<script src="dist/js/app.js"></script>
+	<script src="dist/js/app.min.js"></script>
 
 </body>
 </html>
