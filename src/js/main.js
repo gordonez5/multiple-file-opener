@@ -8,8 +8,13 @@ $(document).ready(function () {
 	Gdz.Panel.init();
 	Gdz.Tabs.init();
 
-	$( '#js-run' ).on( 'click', function(){
+	$( '#js-run' ).on( 'click', function() {
 		Gdz.Global.run();
+	});
+
+	$( '#js-next' ).on( 'click', function() {
+		$( '[data-tab="tab-code"]' ).click();
+		$( '#folder' ).focus();
 	});
 
 });

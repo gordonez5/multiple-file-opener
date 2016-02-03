@@ -1,6 +1,3 @@
-/* global require, console */
-'use strict';
-
 var gulp = require('gulp');
 
 // require other packages
@@ -29,13 +26,6 @@ gulp.task('scripts', function() {
 		'./src/js/modules/Gdz.Tabs.js',
 		'./src/js/modules/Gdz.Checkboxes.js',
 		'./src/js/modules/Gdz.Global.js',
-		// './src/js/vendor/plugins/responsive-nav.js',
-		// './src/js/vendor/plugins/fastclick.js',
-		// './src/js/vendor/plugins/scroll.js',
-		// './src/js/vendor/plugins/fixed-responsive-nav.js',
-		// './src/js/vendor/plugins/spamless.js',
-		// './src/js/vendor/plugins/chart.js',
-		// './src/js/modules/*.js',
 		'./src/js/main.js'
 		])
 		.pipe(concat('app.js'))
@@ -69,13 +59,6 @@ gulp.task('critical', function() {
 	return gulp.src('./src/sass/base/critical.scss')
 		.pipe(sass({includePaths: ['./src/sass/base'], outputStyle: 'expanded'}))
 		.pipe(gulp.dest('./dist/css/'));
-		// .pipe(sourcemaps.init())
-		// .pipe(cssmin({compatibility: 'ie8'}))
-		// .pipe(rename({
-			// suffix: '.min'
-		// }))
-		// .pipe(sourcemaps.write('../maps'))
-		// .pipe(gulp.dest('./dist/css/'));
 });
 
 // watch task

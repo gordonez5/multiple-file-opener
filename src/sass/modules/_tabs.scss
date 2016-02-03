@@ -1,7 +1,7 @@
 // Simple tabs
 
 .page-tabs {
-	margin: 0 auto 2rem;
+	margin: 0 auto;
 	padding: 0 1rem;
 	@media screen and (min-width: 569px) {
 		// max-width: 700px;
@@ -48,7 +48,7 @@
 			background-color: $white;
 			border-bottom-color: $white;
 			border-width: 1px;
-			color: $black;
+			color: #09a883;
 		}
 	}
 }

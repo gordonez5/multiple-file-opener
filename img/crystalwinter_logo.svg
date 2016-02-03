@@ -2,7 +2,7 @@
 	 viewBox="78.949 335.265 453.714 120.279"
 	 enable-background="new 78.949 335.265 453.714 120.279" xml:space="preserve">
 	 <style>
-		@media all and (max-width: 199px) {
+		@media all and (max-width: 9px) {
 			#strapline{
 				opacity: 0;
 				display:none;

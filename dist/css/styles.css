@@ -2839,19 +2839,10 @@ th {
 .grid .unit {
   float: left;
   width: 100%;
-  padding: 10px;
   text-align: left;
 }
 
 /* This ensures the outer gutters are equal to the (doubled) inner gutters. */
-.grid .unit:first-child {
-  padding-left: 20px;
-}
-
-.grid .unit:last-child {
-  padding-right: 20px;
-}
-
 /* Nested grids already have padding though, so let’s nuke it */
 .unit .unit:first-child {
   padding-left: 0;
@@ -2972,12 +2963,10 @@ th {
 }
 
 /* Responsive Stuff */
-@media screen and (max-width: 568px) {
+@media screen and (max-width: 768px) {
   /* Stack anything that isn’t full-width on smaller screens */
   .grid .unit {
     width: 100% !important;
-    padding-left: 20px;
-    padding-right: 20px;
   }
   .unit .grid .unit {
     padding-left: 0px;
@@ -3807,10 +3796,9 @@ body {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   text-size-adjust: 100%;
-  color: #232332;
+  color: #3a3a3a;
   background-color: #F7F7F7;
-  /*font: normal 100%/1.4 sans-serif;*/
-  font-family: 'open sans', sans-serif;
+  font-family: sans-serif;
   font-size: 16px;
 }
 
@@ -3825,12 +3813,12 @@ section {
 }
 
 .grid .unit.whole {
-  padding-right: 10px;
+  padding: 0 1rem;
 }
 
-@media screen and (max-width: 568px) {
+@media screen and (min-width: 569px) {
   .grid .unit.whole {
-    padding-right: 20px;
+    padding: 0.5rem 1rem 0;
   }
 }
 
@@ -3849,7 +3837,6 @@ section {
 }
 
 .section__options .container {
-  /*display: inline-block;*/
   vertical-align: top;
 }
 
@@ -3857,12 +3844,17 @@ section {
   margin-top: 2em;
 }
 
+@media (min-width: 769px) {
+  .container--code {
+    padding-left: 1rem;
+  }
+}
+
 .container--radios {
   display: inline-block;
 }
 
 .container--checks {
-  /*max-width: 30%;*/
   margin-left: 2rem;
 }
 
@@ -3952,7 +3944,7 @@ a:hover, a:focus, a:active {
 
 @media screen and (min-width: 600px) {
   .site-header .logo {
-    margin: 0 auto;
+    margin: 0.5rem auto;
     max-width: 360px;
   }
 }
@@ -3961,13 +3953,6 @@ a:hover, a:focus, a:active {
   display: block;
   height: auto;
   width: 100%;
-}
-
-.footer__main .section__footer {
-  border-color: #005959;
-  border-style: solid;
-  border-width: 0;
-  color: #232332;
 }
 
 .copyright {
@@ -3980,12 +3965,20 @@ a:hover, a:focus, a:active {
   border-width: 0 0 4px;
   border-radius: 2px;
   cursor: pointer;
-  font-size: 1.8rem;
-  padding: 1rem 1.5rem;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
   text-align: center;
   text-decoration: none;
-  min-width: 15rem;
+  min-width: 50%;
   position: relative;
+}
+
+.checkall .btn {
+  width: 100%;
+}
+
+.run .btn {
+  font-size: 1.8rem;
 }
 
 .btn-primary {
@@ -3998,18 +3991,6 @@ a:hover, a:focus, a:active {
   background-color: #a70236;
 }
 
-.btn-primary:after {
-  background-image: url(http://www.crystalski.co.uk/static/images/crystalbrand/generalicons/arrow-sprite.png);
-  background-repeat: no-repeat;
-  background-position: 2px -340px;
-  content: '';
-  width: 2rem;
-  height: 2rem;
-  position: absolute;
-  top: 14px;
-  right: 1rem;
-}
-
 .btn-secondary {
   background-color: #e5e5e5;
   border-color: #ccc;
@@ -4020,11 +4001,41 @@ a:hover, a:focus, a:active {
   background-color: #d8d8d8;
 }
 
+.btn-tertiary {
+  background-color: #00ce9b;
+  border-color: #009b75;
+  color: #fefefe;
+}
+
+.btn-tertiary:hover {
+  background-color: #009b75;
+}
+
+.chevron:after {
+  content: "\f054";
+  display: inline-block;
+  font: normal normal normal 0.8rem/1 FontAwesome;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0, 0);
+  margin-left: 1em;
+}
+
 .run,
 .checkall {
   clear: left;
   margin: 1rem 0;
   text-align: right;
+}
+
+.next {
+  margin-top: 2em;
+  text-align: right;
+}
+
+.next button {
+  min-width: 10%;
 }
 
 dl {
@@ -4067,7 +4078,7 @@ dt {
 }
 
 .field {
-  padding: 0 0 1rem 0;
+  margin: 0 0 1rem 0;
 }
 
 .field label {
@@ -4080,19 +4091,172 @@ dt {
   margin-bottom: 0.5em;
 }
 
-.checks {
-  /*display: inline-block;*/
-  /*max-width: 45%;*/
+.filters {
+  overflow: hidden;
 }
 
-.checks label {
+.filter-group {
+  float: left;
+  padding: 0 0.25em;
+  width: 33.33%;
+}
+
+@media (min-width: 520px) {
+  .filter-group {
+    padding: 0 0.5em;
+  }
+}
+
+@media (min-width: 769px) {
+  .filter-group {
+    float: none;
+    padding: 0;
+    margin-bottom: 1.5em;
+    width: auto;
+  }
+}
+
+.filter {
+  margin-bottom: 0.5em;
+}
+
+.filter input {
+  display: none;
+}
+
+.filter label {
+  border-color: #09a883;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  cursor: pointer;
   display: block;
+  padding: 0.25em 0.25em;
+  text-align: center;
+  -webkit-transition: background-color 0.2s ease-in;
+  -moz-transition: background-color 0.2s ease-in;
+  transition: background-color 0.2s ease-in;
+}
+
+.filter label:hover {
+  background-color: #F7F7F7;
+}
+
+@media (min-width: 520px) {
+  .filter label {
+    padding: 0.5em 1em;
+  }
+}
+
+@media (min-width: 569px) {
+  .filter label {
+    border-radius: 3em;
+    text-align: left;
+  }
+  .filter label:before {
+    content: "\f0b0";
+    color: #09a883;
+    display: inline-block;
+    font: normal normal normal 1em/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+    margin-right: 0.5em;
+  }
+}
+
+.filter :checked + label {
+  background-color: #09a883;
+  color: #fefefe;
+}
+
+@media (min-width: 569px) {
+  .filter :checked + label:before {
+    color: #fefefe;
+    content: "\f00d";
+  }
+}
+
+.sites {
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+@media (min-width: 769px) {
+  .sites {
+    padding: 0 1em;
+  }
+}
+
+.sites__row {
+  display: flex;
+  margin-bottom: 0.5em;
+}
+
+.sites__row .site {
+  display: flex;
+  flex-grow: 1;
+  padding-left: 1em;
+}
+
+.sites__row .check {
+  text-align: center;
+  width: 15%;
+}
+
+.sites__row .check .fa {
+  font-size: 2em;
   margin: 0.5rem 0;
 }
 
-.checks input,
-.checks span {
-  margin: 0.5rem 0.25rem;
+.sites__header-row {
+  font-weight: 700;
+}
+
+.sites__data-row {
+  border-color: #d5d5d5;
+  border-style: solid;
+  border-width: 0;
+}
+
+.sites__data-row[data-site="52"] {
+  background-color: #C2E6FA;
+}
+
+.sites__data-row[data-site="70"], .sites__data-row[data-site="71"] {
+  background-color: #E7F5DA;
+}
+
+.sites__data-row[data-site="79"] {
+  background-color: #C2E6FA;
+}
+
+.sites__data-row[data-site="78"], .sites__data-row[data-site="81"] {
+  background-color: #f2f2f2;
+}
+
+.sites__data-row .site {
+  align-items: center;
+}
+
+.checks__input {
+  display: none;
+}
+
+.checks__input + .fa {
+  cursor: pointer;
+}
+
+.checks__input + .fa:before {
+  color: #a3a3a3;
+  content: "\f1db";
+}
+
+.checks__input:checked + .fa:before {
+  color: #3a3a3a;
+  content: '\f058';
 }
 
 .container input[type="text"] {
@@ -4103,7 +4267,7 @@ dt {
   display: inline-block;
   font-size: 1.5rem;
   margin-right: 1rem;
-  min-width: 15rem;
+  min-width: 14rem;
   padding: 0.5rem;
 }
 
@@ -4126,7 +4290,6 @@ dt {
   border-width: 1px;
   border-radius: 2px;
   font-family: consolas, monospace;
-  /*font-size: 1rem;*/
   width: 100%;
   padding: 1em 1em 1em 3em;
 }
@@ -4144,8 +4307,6 @@ dt {
   color: #ccc;
   content: '$';
   position: absolute;
-  /*width: 10px;*/
-  /*height: 10px;*/
   top: 14px;
   left: 24px;
 }
@@ -4223,7 +4384,7 @@ dt {
 }
 
 .page-tabs {
-  margin: 0 auto 2rem;
+  margin: 0 auto;
   padding: 0 1rem;
 }
 
@@ -4271,7 +4432,7 @@ dt {
   background-color: #fefefe;
   border-bottom-color: #fefefe;
   border-width: 1px;
-  color: #232332;
+  color: #09a883;
 }
 
 .gdz-tabs__content {
@@ -4301,64 +4462,4 @@ dt {
 
 .gdz-tabs__content.active {
   display: inherit;
-}
-
-.call-out {
-  border-color: #d5d5d5;
-  border-style: solid;
-  border-width: 3px;
-  border-radius: 0.5rem;
-  margin-bottom: 1rem;
-  padding: 0 0 1rem;
-}
-
-.call-out h2 {
-  font-weight: 700;
-  text-transform: uppercase;
-  background-color: #d5d5d5;
-  color: #fefefe;
-  display: block;
-  padding: 1rem;
-  text-align: center;
-}
-
-.call-out h2:before, .call-out h2:after {
-  content: '\2605';
-}
-
-.call-out h2:before {
-  margin-right: 1rem;
-}
-
-.call-out h2:after {
-  margin-left: 1rem;
-}
-
-.call-out p:last-child {
-  margin: 0;
-}
-
-.call-out .initial {
-  color: #005959;
-  font-size: 110%;
-  font-weight: 700;
-}
-
-.call-out.factoid {
-  padding: 0;
-  margin-top: 1.5rem;
-}
-
-@media screen and (min-width: 720px) {
-  .call-out.factoid {
-    margin-top: 0;
-  }
-}
-
-.call-out.factoid h2 {
-  margin-bottom: 1rem;
-}
-
-.call-out.factoid p {
-  margin: 1rem;
 }

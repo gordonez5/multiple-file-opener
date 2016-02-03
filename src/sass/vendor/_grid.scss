@@ -20,13 +20,13 @@
 .grid .unit {
 	float: left;
 	width: 100%;
-	padding: 10px;
+	// padding: 10px;
 	text-align: left;
 }
 
 /* This ensures the outer gutters are equal to the (doubled) inner gutters. */
-.grid .unit:first-child { padding-left: 20px; }
-.grid .unit:last-child { padding-right: 20px; }
+// .grid .unit:first-child { padding-left: 20px; }
+// .grid .unit:last-child { padding-right: 20px; }
 
 /* Nested grids already have padding though, so let’s nuke it */
 .unit .unit:first-child { padding-left: 0; }
@@ -84,12 +84,12 @@
 .pull-right   { float: right; }
 
 /* Responsive Stuff */
-@media screen and (max-width: 568px) {
+@media screen and (max-width: 768px) {
 	/* Stack anything that isn’t full-width on smaller screens */
 	.grid .unit {
 		width: 100% !important;
-		padding-left: 20px;
-		padding-right: 20px;
+		// padding-left: 20px;
+		// padding-right: 20px;
 	}
 	.unit .grid .unit {
 		padding-left: 0px;

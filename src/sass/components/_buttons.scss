@@ -3,51 +3,73 @@
 	border-width: 0 0 4px;
 	border-radius: 2px;
 	cursor: pointer;
-	font-size: 1.8rem;
-	padding: 1rem 1.5rem;
+	font-size: 1.2rem;
+	padding: 0.5rem 1rem;
 	text-align: center;
 	text-decoration: none;
-	min-width: 15rem;
+	min-width: 50%;
 	position: relative;
+	.checkall & {
+		width: 100%;
+	}
+	.run & {
+		font-size: 1.8rem;
+	}
 }
 
 .btn-primary {
 	background-color: #c0023e;
 	border-color: #a70236;
 	color: #fff;
-}
-
-.btn-primary:hover {
-	background-color: #a70236;
-}
-
-.btn-primary:after {
-	background-image: url(http://www.crystalski.co.uk/static/images/crystalbrand/generalicons/arrow-sprite.png);
-	background-repeat: no-repeat;
-	background-position: 2px -340px;
-	content: '';
-	width: 2rem;
-	height: 2rem;
-	position: absolute;
-	top: 14px;
-	right: 1rem;
+	&:hover {
+		background-color: #a70236;
+	}
 }
 
 .btn-secondary {
 	background-color: #e5e5e5;
 	border-color: #ccc;
 	color: #252a32;
+	&:hover {
+		background-color: #d8d8d8;
+	}
 }
 
-.btn-secondary:hover {
-	background-color: #d8d8d8;
+.btn-tertiary {
+	background-color: #00ce9b;
+	border-color: #009b75;
+	color: $white;
+	&:hover {
+		background-color: #009b75;
+	}
 }
 
-
+.chevron {
+	&:after {
+		content: "\f054";
+		// color: #09a883;
+		display: inline-block;
+		font: normal normal normal 0.8rem/1 FontAwesome;
+		// font-size: inherit;
+		text-rendering: auto;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		transform: translate(0, 0);
+		margin-left: 1em;
+	}
+}
 
 .run,
 .checkall {
 	clear: left;
 	margin: 1rem 0;
 	text-align: right;
+}
+
+.next {
+	margin-top: 2em;
+	text-align: right;
+	button {
+		min-width: 10%;
+	}
 }
