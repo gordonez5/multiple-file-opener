@@ -8,8 +8,6 @@ Gdz.Panel = {
 			$panel = $('.off-canvas'),
 			isPanelActive = false;
 
-			// console.log($panel);
-
 		// Add / remove 'off-canvas-active' class to trigger slide-in navigation
 		$document.on('click', '#js-config, #js-close-config', function(e) {
 
@@ -26,15 +24,6 @@ Gdz.Panel = {
 			}
 
 		});
-
-		// Trigger panel close on click of element outside of nav
-		// $document.on('click', function(event) {
-		// 	if (!$(event.target).closest('#js-off-canvas-trigger, .off-canvas').length) {
-		// 		if (isPanelActive === true) {
-		// 			$panel.removeClass('off-canvas-active');
-		// 		}
-		// 	}
-		// });
 
 	}
 

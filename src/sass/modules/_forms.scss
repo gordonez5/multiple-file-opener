@@ -17,54 +17,99 @@
 	margin-bottom: 0.5em;
 }
 
-.checks {
-	/*display: inline-block;*/
-	// float: left;
-	/*max-width: 45%;*/
-	// padding: 0 1rem 1rem;
+.filters {
+	overflow: hidden;
 }
 
-.checks label {
-	display: block;
-	margin: 0.5rem 0;
+.filter-group {
+	float: left;
+	padding: 0 0.25em;
+	width: 33.33%;
+	@media (min-width: 520px) {
+		padding: 0 0.5em;
+	}
+	@media (min-width: 769px) {
+		float: none;
+		padding: 0;
+		margin-bottom: 1.5em;
+		width: auto;
+	}
 }
 
-.checks input,
-.checks.filters span {
-	margin: 0.5rem 0.25rem;
+.filter {
+	margin-bottom: 0.5em;
+	input {
+		display: none;
+	}
+	label {
+		border-color: #09a883;
+		border-style: solid;
+		border-width: 1px;
+		border-radius: 5px;
+		cursor: pointer;
+		display: block;
+		padding:  0.25em 0.25em;
+		text-align: center;
+		-webkit-transition: background-color 0.2s ease-in;
+		-moz-transition: background-color 0.2s ease-in;
+		transition: background-color 0.2s ease-in;
+		&:hover {
+			background-color: $vltgrey;
+		}
+		@media (min-width: 520px) {
+			padding: 0.5em 1em;
+		}
+		@media (min-width: 569px) {
+			border-radius: 3em;
+			text-align: left;
+			&:before {
+				content: "\f0b0";
+				color: #09a883;
+				display: inline-block;
+				font: normal normal normal 1em/1 FontAwesome;
+				font-size: inherit;
+				text-rendering: auto;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+				transform: translate(0, 0);
+				margin-right: 0.5em;
+			}
+		}
+	}
+	& :checked + label {
+		background-color: #09a883;
+		color: $white;
+		@media (min-width: 569px) {
+			&:before {
+				color: $white;
+				content: "\f00d";
+			}
+		}
+	}
 }
 
-.sites__container {
-	display: table;
-	width: 100%;
+.sites {
+	max-width: 450px;
+	margin: 0 auto;
+	@media (min-width: 769px) {
+		padding: 0 1em;
+	}
 }
-
-// .sites__row {
-// 	display: table-row;
-// 	.site {
-// 		display: table-cell;
-// 	}
-// 	.check {
-// 		display: table-cell;
-// 		text-align: center;
-// 		.fa {
-// 			font-size: 2em;
-// 		}
-// 	}
-// }
 
 .sites__row {
 	display: flex;
 	margin-bottom: 0.5em;
 	.site {
-		// min-width: 200px;
+		display: flex;
 		flex-grow: 1;
+		padding-left: 1em;
 	}
 	.check {
 		text-align: center;
 		width: 15%;
 		.fa {
 			font-size: 2em;
+			margin: 0.5rem 0;
 		}
 	}
 }
@@ -78,52 +123,31 @@
 	border-style: solid;
 	border-width: 0;
 	&[data-site="52"] {
-		background-color: #a0c7e7;
+		background-color: #C2E6FA;
 		.site {
-			background-image: url(/multiple-file-opener/img/thomsonsummer_logo.svg);
-			background-size: 150px;
 		}
 	}
 	&[data-site="70"],
 	&[data-site="71"] {
-		background-color: #f5f5f5;
+		background-color: #E7F5DA;
 		.site {
-			background-image: url(/multiple-file-opener/img/crystalsummer_logo.svg);
 		}
 	}
 	&[data-site="79"] {
-		background-color: #73afdc;
+		background-color: #C2E6FA;
 		.site {
-			background-image: url(/multiple-file-opener/img/thomsonwinter_logo.svg);
-			background-size: 150px;
 		}
 	}
-	&[data-site="71"],
+	&[data-site="78"],
 	&[data-site="81"] {
+		background-color: #f2f2f2;
 		.site {
-			position: relative;
-			&:after {
-				color: $black;
-				content: '(Ireland)';
-				display: block;
-				font-size: 1rem;
-				height: 20px;
-				left: 130px;
-				line-height: 1;
-				position: absolute;
-				text-indent: 0;
-				top: 1rem;
-				width: auto;
-			}
 		}
 	}
 	.site {
-		background-image: url(/multiple-file-opener/img/crystalwinter_logo.svg);
-		background-position: 5px 10px;
-		background-repeat: no-repeat;
-		background-size: 110px;
-		padding: 0;
-		text-indent: -99999em;
+		align-items: center;
+		.site__name {
+		}
 	}
 }
 
@@ -137,22 +161,19 @@
 		}
 	}
 	&:checked + .fa:before {
-		color: #84329b;
-		content: '\f05d';
+		color: $black;
+		content: '\f058';
 	}
 	[data-site="52"] &,
 	[data-site="79"] & {
 		& + .fa:before {
-			color: $white;
 		}
 		&:checked + .fa:before {
-			color: #ffe100;
 		}
 	}
 	[data-site="70"] &,
 	[data-site="71"] & {
 		&:checked + .fa:before {
-			color: #55AB27;
 		}
 	}
 }
@@ -189,7 +210,6 @@
 	border-width: 1px;
 	border-radius: 2px;
 	font-family: consolas, monospace;
-	/*font-size: 1rem;*/
 	width: 100%;
 	padding: 1em 1em 1em 3em;
 }
@@ -207,8 +227,6 @@
 	color: #ccc;
 	content: '$';
 	position: absolute;
-	/*width: 10px;*/
-	/*height: 10px;*/
 	top: 14px;
 	left: 24px;
 }
