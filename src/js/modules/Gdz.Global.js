@@ -160,6 +160,22 @@ Gdz.Global = {
 
 	},
 
+	// Populate input with common path on click
+	commonPathInput: function() {
+
+		'use strict';
+
+		$( '.common-paths__list' ).on('click', 'li', function() {
+
+			var $this = $(this),
+				path = $this.attr('data-path');
+
+			document.getElementById( 'folder' ).value = path;
+
+		});
+
+	},
+
 	// Runs the setOptions and createCommand methods
 	run: function() {
 
@@ -194,6 +210,7 @@ Gdz.Global = {
 
 		this.getOptions();
 		this.consoleCheck();
+		this.commonPathInput();
 		Gdz.Cookies.noCookieMessage( '.footer__main' );
 
 	}

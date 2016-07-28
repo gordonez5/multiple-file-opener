@@ -19,14 +19,14 @@ var msg = function( title, message ){
 // scripts task
 gulp.task('scripts', function() {
 	return gulp.src([
-		'./src/js/vendor/libraries/*.js',
-		'./src/js/modules/Gdz.Helpers.js',
-		'./src/js/modules/Gdz.Cookies.js',
-		'./src/js/modules/Gdz.Panel.js',
-		'./src/js/modules/Gdz.Tabs.js',
-		'./src/js/modules/Gdz.Checkboxes.js',
-		'./src/js/modules/Gdz.Global.js',
-		'./src/js/main.js'
+			'./src/js/vendor/libraries/*.js',
+			'./src/js/modules/Gdz.Helpers.js',
+			'./src/js/modules/Gdz.Cookies.js',
+			'./src/js/modules/Gdz.Panel.js',
+			'./src/js/modules/Gdz.Tabs.js',
+			'./src/js/modules/Gdz.Checkboxes.js',
+			'./src/js/modules/Gdz.Global.js',
+			'./src/js/main.js'
 		])
 		.pipe(concat('app.js'))
 		.pipe(gulp.dest('./dist/js/'))
