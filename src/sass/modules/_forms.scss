@@ -106,7 +106,10 @@
 	}
 	.check {
 		text-align: center;
-		width: 15%;
+		width: 20%;
+		@media (min-width: 469px) {
+			width: 15%;
+		}
 		.fa {
 			font-size: 2em;
 			margin: 0.5rem 0;
