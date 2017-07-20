@@ -5,3 +5,9 @@ css-toggle-switch/
 node_modules/
 
 dist/css/maps/
+img/*.ai
+img/*.zip
+img/mf-openr_logo2.png
+img/mf-openr_logo2.svg
+img/mf-openr_logo2b.png
+img/mf-openr-favicon.png
