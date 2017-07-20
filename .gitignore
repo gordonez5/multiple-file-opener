@@ -4,6 +4,9 @@
 css-toggle-switch/
 node_modules/
 
+src/packages/
+src/js/vendor/
+
 dist/css/maps/
 img/*.ai
 img/*.zip

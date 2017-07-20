@@ -1,0 +1,32 @@
+{
+	"name": "mfopenr",
+	"version": "1.0.0",
+	"authors": [
+		"Simon Gordon"
+	],
+	"description": "A tool for opening multiple Alpine static content files in Sublime Text.",
+	"main": "js.js",
+	"keywords": [
+		"jira",
+		"panel"
+	],
+	"license": "MIT",
+	"homepage": "",
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"bower_components",
+		"src/packages/",
+		"test",
+		"tests"
+	],
+	"dependencies": {
+		"clipboard": "^1.6.1",
+		"jquery": "~1.11.3",
+		"magnific-popup": "~1.0.0",
+		"mustache.js": "mustache#^2.3.0"
+	},
+	"moduleType": [
+		"globals"
+	]
+}

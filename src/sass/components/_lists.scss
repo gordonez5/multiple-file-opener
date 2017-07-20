@@ -55,3 +55,83 @@ dd {
 		}
 	}
 }
+
+.recent-path-list {
+	margin: 1rem 0;
+}
+
+.recent-path__row {
+	display: table;
+	margin-bottom: 0.5em;
+	padding: 0.2em 0.5em;
+	width: 100%;
+
+	.recent-path__text {
+		// flex-direction: column;
+		// flex-grow: 1;
+		display: table-cell;
+		vertical-align: middle;
+		line-height: 1;
+		margin: 0.5rem 0;
+
+		&:hover {
+			cursor: pointer;
+			text-decoration: underline;
+		}
+
+		p {
+			margin: 0;
+		}
+	}
+
+	// .criterion__number,
+	.recent-path__number {
+		line-height: 1;
+		width: 2rem;
+		display: table-cell;
+		vertical-align: middle;
+		padding: 0 1rem;
+	}
+
+	.recent-path__delete,
+	.recent-path__handle {
+		// text-align: center;
+		width: 2rem;
+		display: table-cell;
+		vertical-align: middle;
+		@media (min-width: 469px) {
+			// width: 10%;
+		}
+		.fa {
+			font-size: 1.4em;
+			// margin: 0.5rem 0;
+		}
+	}
+	.recent-path__handle {
+		text-align: center;
+		.fa {
+			color: $dkgrey;
+			cursor: move;
+			&:hover {
+				color: $black;
+			}
+		}
+	}
+	.recent-path__delete {
+		text-align: right;
+		.fa {
+			cursor: pointer;
+			&:hover {
+				color: $fenwayRed;
+			}
+		}
+	}
+}
+
+.recent-path__data-row {
+	background-color: #f2f2f2;
+	border-color: $dkgrey;
+	border-style: solid;
+	border-width: 0;
+}
+
