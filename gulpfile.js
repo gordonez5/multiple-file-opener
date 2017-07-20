@@ -2,7 +2,7 @@ var gulp = require('gulp');
 
 // require other packages
 var concat = require('gulp-concat');
-var cssmin = require('gulp-minify-css');
+var cssmin = require('gulp-clean-css');
 var notifier = require('node-notifier');
 var rename = require('gulp-rename');
 var sass = require('gulp-sass');
@@ -19,13 +19,17 @@ var msg = function( title, message ){
 // scripts task
 gulp.task('scripts', function() {
 	return gulp.src([
-			'./src/js/vendor/libraries/*.js',
 			'./src/js/modules/Gdz.Helpers.js',
+			'./src/packages/jquery/dist/jquery.min.js',
+			'./src/packages/mustache.js/mustache.min.js',
+			'./src/packages/Sortable/Sortable.min.js',
+			'./src/packages/clipboard/dist/clipboard.min.js',
 			'./src/js/modules/Gdz.Cookies.js',
 			'./src/js/modules/Gdz.Panel.js',
 			'./src/js/modules/Gdz.Tabs.js',
 			'./src/js/modules/Gdz.Checkboxes.js',
 			'./src/js/modules/Gdz.Global.js',
+			'./src/js/modules/recentPaths.js',
 			'./src/js/main.js'
 		])
 		.pipe(concat('app.js'))

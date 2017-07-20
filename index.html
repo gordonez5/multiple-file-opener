@@ -292,13 +292,16 @@
 					<div class="grid container">
 
 						<div class="unit half container container--folder">
+
 							<div class="field">
 								<label for="folder">Folder:</label>
 								<input class="folder" id="folder" name="folder" type="text" placeholder="eg. ski-resorts/france-ski-holidays">
 							</div>
+
 							<div class="run">
 								<button id="js-run" class="btn btn-primary">Go</button>
 							</div>
+
 							<div class="common-paths">
 
 								<label>Common paths:</label>
@@ -308,7 +311,30 @@
 									<li data-path="header/promo-banner">Header promos</li>
 									<li data-path="our-policies/terms-and-conditions/promotion-information">Promotion information</li>
 								</ul>
+
 							</div>
+
+							<div class="recent-paths">
+
+								<label>Recent paths:</label>
+
+								<div id="recentPathsList" class="recent-path-list">
+
+									<script id="recentPaths-template" type="text/template">
+										{{#recentPaths}}
+										<div class="recent-path__row recent-path__data-row">
+											<div data-path="{{.}}" class="recent-path__text">{{.}}</div>
+											<div data-action="delete" class="recent-path__delete">
+												<i class="fa fa-trash"></i>
+											</div>
+										</div>
+										{{/recentPaths}}
+									</script>
+
+								</div>
+
+							</div>
+
 						</div>
 
 						<div class="unit half container container--code">
