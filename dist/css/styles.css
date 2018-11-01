@@ -4146,7 +4146,7 @@ dt {
 }
 
 .recent-path__row .recent-path__handle {
-  text-align: center;
+  text-align: left;
 }
 
 .recent-path__row .recent-path__handle .fa {

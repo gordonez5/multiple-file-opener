@@ -20,10 +20,10 @@ var msg = function( title, message ){
 gulp.task('scripts', function() {
 	return gulp.src([
 			'./src/js/modules/Gdz.Helpers.js',
-			'./src/packages/jquery/dist/jquery.min.js',
-			'./src/packages/mustache.js/mustache.min.js',
-			'./src/packages/Sortable/Sortable.min.js',
-			'./src/packages/clipboard/dist/clipboard.min.js',
+			'./node_modules/jquery/dist/jquery.min.js',
+			'./node_modules/mustache/mustache.min.js',
+			'./node_modules/sortablejs/Sortable.min.js',
+			// './node_modules/clipboard/dist/clipboard.min.js',
 			'./src/js/modules/Gdz.Cookies.js',
 			'./src/js/modules/Gdz.Panel.js',
 			'./src/js/modules/Gdz.Tabs.js',
