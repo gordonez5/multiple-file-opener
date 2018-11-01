@@ -147,26 +147,6 @@
 
 								<h4>Filters:</h4>
 
-								<div class="filter-group brand">
-									<div class="filter">
-										<input id="filterCrystal" rel="crystal" name="brand" type="checkbox" value="crystal">
-										<label for="filterCrystal" class="">Crystal sites</label>
-									</div>
-									<div class="filter">
-										<input id="filterThomson" rel="thomson" name="brand" type="checkbox" value="thomson">
-										<label for="filterThomson" class="">Thomson sites</label>
-									</div>
-								</div>
-								<div class="filter-group season">
-									<div class="filter">
-										<input id="filterWinter" rel="winter" name="season" type="checkbox" value="winter">
-										<label for="filterWinter" class="">winter sites</label>
-									</div>
-									<div class="filter">
-										<input id="filterSummer" rel="summer" name="season" type="checkbox" value="summer">
-										<label for="filterSummer" class="">summer sites</label>
-									</div>
-								</div>
 								<div class="filter-group customer">
 									<div class="filter">
 										<input id="filterDirect" rel="direct" name="customer" type="checkbox" value="direct">
@@ -196,45 +176,6 @@
 										<span class="check">Direct</span>
 										<span class="check">Agent</span>
 									</div>
-									<div data-site="52" class="sites__row sites__data-row">
-										<span class="site">
-											<span class="site__name">Thomson Lakes</span>
-										</span>
-										<span class="check">
-											<input class="checks__input" data-customer="direct" data-brand="thomson" data-season="summer" name="sites" type="checkbox" id="52d" value="direct/52/">
-											<label for="52d" class="fa"></label>
-										</span>
-										<span class="check">
-											<input class="checks__input" data-customer="agent" data-brand="thomson" data-season="summer" name="sites" type="checkbox" id="52a" value="agent/52/">
-											<label for="52a" class="fa"></label>
-										</span>
-									</div>
-									<div data-site="70" class="sites__row sites__data-row">
-										<span class="site">
-											<span class="site__name">Crystal Summer</span>
-										</span>
-										<span class="check">
-											<input class="checks__input" data-customer="direct" data-brand="crystal" data-season="summer" name="sites" type="checkbox" id="70d" value="direct/70/">
-											<label for="70d" class="fa"></label>
-										</span>
-										<span class="check">
-											<input class="checks__input" data-customer="agent" data-brand="crystal" data-season="summer" name="sites" type="checkbox" id="70a" value="agent/70/">
-											<label for="70a" class="fa"></label>
-										</span>
-									</div>
-									<div data-site="71" class="sites__row sites__data-row">
-										<span class="site">
-											<span class="site__name">Crystal Summer IE</span>
-										</span>
-										<span class="check">
-											<input class="checks__input" data-customer="direct" data-brand="crystal" data-season="summer" name="sites" type="checkbox" id="71d" value="direct/71/">
-											<label for="71d" class="fa"></label>
-										</span>
-										<span class="check">
-											<input class="checks__input" data-customer="agent" data-brand="crystal" data-season="summer" name="sites" type="checkbox" id="71a" value="agent/71/">
-											<label for="71a" class="fa"></label>
-										</span>
-									</div>
 									<div data-site="78" class="sites__row sites__data-row">
 										<span class="site">
 											<span class="site__name">Crystal Ski</span>
@@ -263,7 +204,7 @@
 									</div>
 									<div data-site="79" class="sites__row sites__data-row">
 										<span class="site">
-											<span class="site__name">Thomson Ski</span>
+											<span class="site__name">Tui Ski</span>
 										</span>
 										<span class="check">
 											<input class="checks__input" name="sites" type="checkbox" id="79d" value="direct/79/">
@@ -307,9 +248,9 @@
 								<label>Common paths:</label>
 
 								<ul class="common-paths__list">
-									<li data-path="homepage/promotions">Homepage banners</li>
-									<li data-path="header/promo-banner">Header promos</li>
 									<li data-path="our-policies/terms-and-conditions/promotion-information">Promotion information</li>
+									<li data-path="contact-us">Contact Us</li>
+									<li data-path="header/contact-centre">Contact Centre (header)</li>
 								</ul>
 
 							</div>
@@ -323,6 +264,9 @@
 									<script id="recentPaths-template" type="text/template">
 										{{#recentPaths}}
 										<div class="recent-path__row recent-path__data-row">
+											<div class="recent-path__handle">
+												<i class="fa fa-bars"></i>
+											</div>
 											<div data-path="{{.}}" class="recent-path__text">{{.}}</div>
 											<div data-action="delete" class="recent-path__delete">
 												<i class="fa fa-trash"></i>
@@ -360,7 +304,7 @@
 
 			<section class="section__footer grid">
 				<div class="unit whole">
-					<p class="copyright">&copy; 2017 Simon Gordon</p>
+					<p class="copyright">&copy; 2018 Simon Gordon</p>
 				</div>
 			</section>
 

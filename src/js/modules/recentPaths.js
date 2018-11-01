@@ -20,6 +20,22 @@ var recentPaths = (function( $ ){
 	getSavedArray();
 
 
+	// Add sortable functionality to the list
+	function _addSortable() {
+
+		var list = document.getElementById( 'recentPathsList' );
+		var sortable = Sortable.create( list, {
+			handle: '.recent-path__handle',
+			animation: 150,
+			onSort: function ( evt ) {
+				_recreateArray();
+			}
+		});
+
+	}
+
+
+
 	function recentPathInput() {
 
 		$( '.recent-paths' ).on('click', '.recent-path__data-row', function() {
@@ -41,7 +57,7 @@ var recentPaths = (function( $ ){
 
 		var i;
 
-		if ( typeof event === "number" ) {
+		if ( typeof event === 'number' ) {
 
 			i = event;
 
@@ -55,8 +71,10 @@ var recentPaths = (function( $ ){
 		// Remove deleted item from recentPathsArray
 		recentPathsArray.splice(i, 1);
 
+		_saveArray();
+
 		// render the UI list
-		_recentPathRender();
+		recentPathRender();
 
 	}
 
@@ -70,7 +88,7 @@ var recentPaths = (function( $ ){
 			var str = localStorage.getItem( 'recentPathsArray' );
 			recentPathsArray = str.split( ',' );
 
-			_recentPathRender();
+			recentPathRender();
 
 		}
 
@@ -86,68 +104,66 @@ var recentPaths = (function( $ ){
 			console.log( 'this item already exists in recentPathsArray' );
 		} else {
 			recentPathsArray.unshift( path );
-			saveArray();
-			_recentPathRender();
+			_saveArray();
+			recentPathRender();
 		}
 
 	}
 
 
-	function _recreateArray() {
-
-		var $items = $list.find( '.sub-criterion__text' );
-
-		// Clone the old criteria array
-		var oldCriteriaArray = criteriaArray;
-		var txt;
-		var $el;
-		var number = $( '#acceptanceCriteriaHeading' ).find( '.criterion__number' ).html();
-
-		// empty the criteriaArray array
-		criteriaArray = [];
-
-		// console.log( 'oldCriteriaArray: ', oldCriteriaArray );
-		$items.each( function( index ) {
-
-			var i = index + 1;
-
-			var $this = $(this);
-			txt = $this.html();
-			$el = $this.prev( '.sub-criterion__number' );
-			$el.html( number + '.' + i );
-
-			criteriaArray.push( txt );
-
-		});
-
-		// panelObj.criteriaArray = criteriaArray;
-		// console.log( 'criteriaArray: ', criteriaArray );
-
-	}
-
-
 	// Save the array to localStorage
-	function saveArray() {
+	function _saveArray() {
 
 		localStorage.setItem( 'recentPathsArray', recentPathsArray );
 
 	}
 
 
+	function _recreateArray() {
+
+		var txt;
+		// var $el;
+		var $items = $recentPathsList.find( '.recent-path__text' );
+
+		// Clone the old criteria array
+		var newArray = recentPathsArray;
+		// var number = criterionPanelObject.header.acNumber;
+
+		// empty the subCriteriaArray array
+		recentPathsArray = [];
+
+		// Loop through existing list items
+		$items.each( function( index ) {
+
+			var i = index + 1;
+
+			var $this = $(this);
+			txt = $this.html();
+			// $el = $this.prev( '.sub-criterion__number' );
+			// $el.html( number + '.' + i );
+
+			recentPathsArray.push( txt );
+
+		});
+
+		_saveArray();
+
+	}
 
 
 	// Render list of recent paths from localStorage
 	// Uses Mustache template
-	function _recentPathRender() {
+	function recentPathRender() {
 
 		$recentPathsList.html(Mustache.render(template, {recentPaths: recentPathsArray}));
+		_addSortable();
 
 	}
 
 
 
 	return {
-		recentPathRender: _recentPathRender,
+		recentPathRender: recentPathRender,
 		recentPathInput: recentPathInput
 	};
 
